@@ -144,15 +144,16 @@
 <main>
 
   <div class="meta">
-    <div><strong>Effective date:</strong> 23 April 2026</div>
+    <div><strong>Effective date:</strong> 6 May 2026</div>
     <div><strong>Provider:</strong> PadelRank</div>
   </div>
 
-  <p>PadelRank is an iOS and Android app that gives padel players access to national federation rankings, international pro rankings, tournaments and club information. The app currently covers <strong>18 countries</strong>:</p>
+  <p>PadelRank is an iOS and Android app that gives padel players access to national federation rankings, international pro rankings, tournaments, team leagues and club information. Three independent data sources cover three different layers of the sport:</p>
 
   <div class="countries">
-    <div><strong>Rankedin-backed (13):</strong><br/>Denmark, Sweden, Germany, Austria, Croatia, Norway, Romania, Slovenia, Moldova, Hungary, Finland, Ukraine, Estonia.</div>
-    <div><strong>FIP / Playtomic-backed (5):</strong><br/>Spain, Mexico, Argentina, Italy, France.</div>
+    <div><strong>National federation rankings (Rankedin) — 13 countries:</strong><br/>Denmark, Sweden, Germany, Austria, Croatia, Norway, Romania, Slovenia, Moldova, Hungary, Finland, Ukraine, Estonia.</div>
+    <div><strong>International pro rankings + Premier Padel / FIP Tour calendar (FIP):</strong><br/>Global, with deep player profile coverage for Spain, Mexico, Argentina, Italy and France.</div>
+    <div><strong>Amateur club-tournament discovery (Playtomic) — 60+ countries:</strong><br/>Including all of Western Europe, the Nordics, Central &amp; Eastern Europe, the Mediterranean, the Middle East, North &amp; Latin America, Africa and Asia-Pacific. The Playtomic feed lights up wherever clubs publish their fixtures.</div>
   </div>
 
   <p>We take your privacy seriously and only process the data strictly required for the app to function.</p>
@@ -191,15 +192,15 @@
   <p>PadelRank communicates with three public data sources to show padel data. When you use the app, requests are sent directly from your device to these services — not through any server we operate. Each provider's own privacy policy applies to the data they process.</p>
 
   <ul>
-    <li><strong>Rankedin</strong> — national rankings, tournaments, player profiles and (optional) user login for the 13 Rankedin-backed countries. Public endpoints on <code>api.rankedin.com</code> and the Azure Front Door CDN that serves profile thumbnails (<code>rankedin-prod-cdn-adavg8d3dwfegkbd.z01.azurefd.net</code>). Rankedin privacy policy: <a href="https://www.rankedin.com/privacy">rankedin.com/privacy</a></li>
-    <li><strong>FIP (Federación Internacional de Pádel)</strong> — global pro rankings, international tournament calendar and player profile pages for Spain, Mexico, Argentina, Italy and France. Public WordPress REST API at <code>padelfip.com/wp-json/fip/v1/...</code> plus direct HTML scraping of public player pages at <code>padelfip.com/player/{slug}/</code>. FIP privacy policy: <a href="https://www.padelfip.com/privacy">padelfip.com/privacy</a></li>
-    <li><strong>Playtomic</strong> — amateur club-tournament discovery for Spain, Mexico, Argentina, Italy and France. Public <code>api.playtomic.io/v1/tournaments</code> endpoint with coordinate-based geographic seed queries. Playtomic privacy policy: <a href="https://playtomic.io/privacy">playtomic.io/privacy</a></li>
+    <li><strong>Rankedin</strong> — national rankings, tournaments, team leagues, player profiles and (optional) user login for the 13 Rankedin-backed countries listed above. Public endpoints on <code>api.rankedin.com</code> and the Azure Front Door CDN that serves profile thumbnails (<code>rankedin-prod-cdn-adavg8d3dwfegkbd.z01.azurefd.net</code>). Rankedin privacy policy: <a href="https://www.rankedin.com/privacy">rankedin.com/privacy</a></li>
+    <li><strong>FIP (Federación Internacional de Pádel)</strong> — Premier Padel + FIP Tour calendar, international pro rankings, recent finals, tournament breakdowns and player profile pages. Public WordPress REST API at <code>padelfip.com/wp-json/fip/v1/...</code> plus the public player pages at <code>padelfip.com/player/{slug}/</code>. FIP privacy policy: <a href="https://www.padelfip.com/privacy">padelfip.com/privacy</a></li>
+    <li><strong>Playtomic</strong> — amateur club-tournament discovery across <strong>60+ countries</strong> covering Western Europe, the Nordics, Central &amp; Eastern Europe, the Mediterranean, the Middle East, Africa, North &amp; Latin America and Asia-Pacific. Public <code>api.playtomic.io/v1/tournaments</code> endpoint with coordinate-based geographic seed queries. Playtomic privacy policy: <a href="https://playtomic.io/privacy">playtomic.io/privacy</a></li>
   </ul>
 
   <p>Profile photos specifically come from:</p>
   <ul>
     <li>Rankedin's Azure Front Door CDN (<code>rankedin-prod-cdn-adavg8d3dwfegkbd.z01.azurefd.net/images/upload/player/{id}thumb.png</code>) for the 13 Rankedin-backed countries;</li>
-    <li>FIP's WordPress Media library (<code>padelfip.com/wp-content/uploads/…</code>) for the 5 FIP/Playtomic-backed countries.</li>
+    <li>FIP's WordPress Media library (<code>padelfip.com/wp-content/uploads/…</code>) for international pro players and the FIP-backed markets (Spain, Mexico, Argentina, Italy, France).</li>
   </ul>
 
   <p>No crash reporting, analytics or telemetry SDK is currently integrated into the app. Should we later enable crash reporting (via Sentry), only anonymised technical details (stack trace, device model, OS version) would be sent — never personal data, location or credentials — and this section of the policy will be updated before such a change takes effect.</p>
@@ -216,13 +217,11 @@
 
   <h2>5. Children</h2>
 
-  <p>PadelRank is not directed at children under 13. We do not knowingly collect data about children. If you discover that a child has created a profile, please contact your local data-protection authority.</p>
+  <p>PadelRank is suitable for users <strong>aged 6 and up</strong> — there's no chat, no in-app purchases, no user-generated content, and no advertising. We do not knowingly collect personal data about anyone, regardless of age. The app reads public sport data and stores user preferences (followed players, country selection) only on the device.</p>
 
   <h2>6. Changes</h2>
 
   <p>Changes to this policy will be published on this page together with an updated effective date. Material changes will be announced in the app.</p>
-
-  <h2>7. Contact</h2>
 
   </main>
 
