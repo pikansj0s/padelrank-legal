@@ -6,7 +6,7 @@
 PadelRank is an iOS and Android app that gives padel players access to national federation rankings, international pro rankings, tournaments, club information and a Danish "Find a match" community. The app currently covers **18 countries**:
 
 - **Rankedin-backed (13):** Denmark, Sweden, Germany, Austria, Croatia, Norway, Romania, Slovenia, Moldova, Hungary, Finland, Ukraine, Estonia.
-- **FIP / Playtomic-backed (5):** Spain, Mexico, Argentina, Italy, France.
+- **FIP-backed (5):** Spain, Mexico, Argentina, Italy, France.
 
 We take your privacy seriously and only process the data strictly required for the app to function.
 
@@ -22,7 +22,7 @@ If you choose to log in with your rankedin.com account:
 - We run no servers that receive your Rankedin credentials.
 - You can delete them at any time in the app's settings or by uninstalling the app.
 
-PadelRank does not support logging in to FIP or Playtomic accounts — those back-ends are used only for public read-only data.
+PadelRank does not support logging in to FIP accounts — that back-end is used only for public read-only data.
 
 ### 1.3 Third-party API data (rankings, tournaments, clubs, profiles)
 The app fetches data from the public APIs listed in §3 to display rankings, tournament results and club information. This data is stored only temporarily in the app's on-device cache (AsyncStorage) to make the app faster; it is never forwarded anywhere.
@@ -66,11 +66,10 @@ PadelRank communicates with the following services. When you use the app, reques
 ### 3.1 Read-only data sources (rankings, tournaments, clubs)
 - **Rankedin** — national rankings, tournaments, player profiles and (optional) user login for the 13 Rankedin-backed countries. Public endpoints on `api.rankedin.com` and the Azure Front Door CDN that serves profile thumbnails (`rankedin-prod-cdn-adavg8d3dwfegkbd.z01.azurefd.net`). Rankedin privacy policy: https://www.rankedin.com/privacy
 - **FIP (Federación Internacional de Pádel)** — global pro rankings, international tournament calendar and player profile pages for Spain, Mexico, Argentina, Italy and France. Public WordPress REST API at `padelfip.com/wp-json/fip/v1/...` plus direct HTML scraping of public player pages at `padelfip.com/player/{slug}/`. FIP privacy policy: https://www.padelfip.com/privacy
-- **Playtomic** — amateur club-tournament discovery for Spain, Mexico, Argentina, Italy and France. Public `api.playtomic.io/v1/tournaments` endpoint with coordinate-based geographic seed queries. Playtomic privacy policy: https://playtomic.io/privacy
 
 Profile photos specifically come from:
 - Rankedin's Azure Front Door CDN (`rankedin-prod-cdn-adavg8d3dwfegkbd.z01.azurefd.net/images/upload/player/{id}thumb.png`) for the 13 Rankedin-backed countries;
-- FIP's WordPress Media library (`padelfip.com/wp-content/uploads/...`) for the 5 FIP/Playtomic-backed countries.
+- FIP's WordPress Media library (`padelfip.com/wp-content/uploads/...`) for the 5 FIP-backed countries.
 
 ### 3.2 Backend / data processor (Community feature only)
 - **Supabase** (Supabase Inc., hosted in Frankfurt, Germany — EU region) acts as our **data processor** for the Community feature. Supabase stores your account record, posts, comments and "I'm in" joins inside a Postgres database hosted in the EU and is contractually bound by GDPR-compliant data-processing terms. Supabase privacy policy: https://supabase.com/privacy

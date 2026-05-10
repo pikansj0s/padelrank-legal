@@ -11,23 +11,22 @@ By downloading, installing, or using PadelRank you accept these terms. If you do
 
 PadelRank is a free app that gives access to padel rankings, tournaments and club information across 18 countries (Denmark, Sweden, Germany, Austria, Croatia, Norway, Romania, Slovenia, Moldova, Hungary, Finland, Ukraine, Estonia, Spain, Mexico, Argentina, Italy, France) and a Danish "Find a match" community.
 
-PadelRank reads from three independent public data sources: **Rankedin** (rankedin.com), **FIP** (padelfip.com) and **Playtomic** (playtomic.io). PadelRank is **independent** of all three and is not an official product of any of them.
+PadelRank reads from two independent public data sources: **Rankedin** (rankedin.com) and **FIP** (padelfip.com). PadelRank is **independent** of both and is not an official product of either.
 
 The Community feature uses **Supabase** (supabase.com) to store user accounts, posts, comments and "I'm in" joins. PadelRank is not affiliated with Supabase, Apple or Google beyond using their published services.
 
 ## 3. Use of third-party data
 
-The data displayed inside PadelRank is owned by the respective providers (Rankedin, FIP, Playtomic). You must comply with each provider's own terms when using their data via PadelRank:
+The data displayed inside PadelRank is owned by the respective providers (Rankedin, FIP). You must comply with each provider's own terms when using their data via PadelRank:
 
 - Rankedin terms: https://www.rankedin.com/terms
 - FIP terms: https://www.padelfip.com/terms
-- Playtomic terms: https://playtomic.io/terms
 
 ## 4. No warranty
 
 PadelRank is provided "as is". We make no guarantee that:
 - The app will always work without errors.
-- Data from Rankedin, FIP or Playtomic is correct or up-to-date.
+- Data from Rankedin or FIP is correct or up-to-date.
 - The app will always be available.
 - Any post, comment, "I'm in" join or other Community content will remain available, accurate, or free of objectionable material.
 
@@ -38,7 +37,7 @@ Use the app at your own risk. We are not liable for any loss, damage, missed mat
 You may not:
 - Use the app for unlawful purposes.
 - Attempt to circumvent security mechanisms.
-- Use the app in a way that harms Rankedin, FIP, Playtomic, Supabase, Apple, Google or other users.
+- Use the app in a way that harms Rankedin, FIP, Supabase, Apple, Google or other users.
 - Reverse engineer, decompile, or modify the app.
 
 ## 6. Community feature rules
