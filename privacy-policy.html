@@ -3,18 +3,21 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="PadelRank — privacy policy. An app that gives padel players access to national federation rankings, international pro rankings, tournaments, club information and a Danish 'Find a match' community. Zero analytics, zero ads, zero tracking." />
-<title>PadelRank — Privacy Policy</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%231E40AF'/%3E%3Ctext x='12' y='16' text-anchor='middle' fill='white' font-family='system-ui' font-weight='700' font-size='14'%3EP%3C/text%3E%3C/svg%3E" />
+<meta name="description" content="PadelRanks — privacy policy. Find a Match community, rankings, tournaments." />
+<title>PadelRanks — Privacy Policy</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%230A0F0D'/%3E%3Cpath d='M6 8a6 6 0 1 1 12 0c0 3-2 4-2 7H8c0-3-2-4-2-7z' fill='%23C5F947'/%3E%3C/svg%3E" />
 <style>
   :root {
-    --brand:      #1E40AF;
-    --brand-dark: #1E3A8A;
-    --text:       #111827;
-    --muted:      #4B5563;
-    --light:      #E5E7EB;
-    --bg:         #FFFFFF;
-    --surface:    #F9FAFB;
+    --bg-dark: #0A0F0D;
+    --accent: #C5F947;
+    --accent-soft: #F3FBE7;
+    --accent-border: #C5F947;
+    --text: #111827;
+    --muted: #4B5563;
+    --light: #E5E7EB;
+    --bg: #FFFFFF;
+    --surface: #F9FAFB;
+    --pill-bg: #F3F4F6;
   }
   * { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; }
@@ -28,44 +31,71 @@
     padding: 0;
     -webkit-font-smoothing: antialiased;
   }
+
+  /* ── Dark header ──────────────────────────────────────────── */
   .hero {
-    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+    background: var(--bg-dark);
     color: white;
-    padding: 3.5rem 1.5rem 3rem;
-    text-align: center;
+    padding: 2.5rem 1.5rem 2rem;
+    border-bottom: 3px solid var(--accent);
   }
-  .hero-logo {
-    display: inline-flex;
-    width: 64px; height: 64px;
-    background: rgba(255,255,255,0.18);
-    border-radius: 16px;
-    align-items: center;
-    justify-content: center;
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 1.25rem;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-    letter-spacing: -0.03em;
+  .hero-inner {
+    max-width: 720px;
+    margin: 0 auto;
   }
   h1 {
     font-size: 2rem;
-    font-weight: 700;
-    margin: 0 0 0.5rem;
+    font-weight: 800;
+    margin: 0 0 0.4rem;
     letter-spacing: -0.02em;
   }
   .hero-sub {
-    font-size: 1rem;
-    opacity: 0.9;
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.6);
     margin: 0;
   }
+
+  /* ── Nav pills ────────────────────────────────────────────── */
+  .nav {
+    max-width: 720px;
+    margin: 1.5rem auto 0;
+    padding: 0 1.5rem;
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+  .nav a {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background: var(--pill-bg);
+    color: var(--text);
+    border: 1px solid var(--light);
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .nav a:hover {
+    background: white;
+    border-color: var(--accent-border);
+  }
+  .nav a.active {
+    background: var(--bg-dark);
+    border-color: var(--bg-dark);
+    color: var(--accent);
+  }
+
+  /* ── Main content ─────────────────────────────────────────── */
   main {
     max-width: 720px;
     margin: 0 auto;
-    padding: 2.5rem 1.5rem 4rem;
+    padding: 2rem 1.5rem 4rem;
   }
   .meta {
-    background: var(--surface);
-    border-left: 4px solid var(--brand);
+    background: var(--accent-soft);
+    border-left: 4px solid var(--accent);
     padding: 1rem 1.25rem;
     border-radius: 6px;
     margin: 0 0 2rem;
@@ -74,14 +104,14 @@
   .meta strong { color: var(--text); }
   h2 {
     font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--brand);
+    font-weight: 800;
+    color: var(--text);
     margin: 2.5rem 0 0.75rem;
     letter-spacing: -0.01em;
   }
   h3 {
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 1.05rem;
+    font-weight: 700;
     color: var(--text);
     margin: 1.5rem 0 0.5rem;
   }
@@ -89,13 +119,14 @@
   ul { margin: 0 0 1.25rem; padding-left: 1.5rem; }
   li { margin-bottom: 0.4rem; }
   a {
-    color: var(--brand);
+    color: #2C7A2C;
     text-decoration: none;
-    border-bottom: 1px solid rgba(30,64,175,0.25);
+    border-bottom: 1px solid rgba(44,122,44,0.25);
     transition: border-color 0.15s;
   }
-  a:hover { border-bottom-color: var(--brand); }
+  a:hover { border-bottom-color: #2C7A2C; }
   strong { color: var(--text); font-weight: 600; }
+
   .countries {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -106,11 +137,22 @@
     margin: 0.5rem 0 1.25rem;
     font-size: 0.95rem;
   }
+  .no-collect {
+    background: #ECFDF5;
+    border: 1px solid #A7F3D0;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+  .no-collect ul { margin: 0; }
+  .no-collect li::marker { color: #059669; }
+
   @media (max-width: 560px) {
     .countries { grid-template-columns: 1fr; }
-    .hero { padding: 2.5rem 1rem 2rem; }
+    .hero { padding: 2rem 1rem 1.5rem; }
     h1 { font-size: 1.6rem; }
-    main { padding: 2rem 1rem 3rem; }
+    main { padding: 1.5rem 1rem 3rem; }
+    .nav { padding: 0 1rem; }
   }
   footer {
     max-width: 720px;
@@ -122,33 +164,29 @@
     text-align: center;
   }
   footer a { color: var(--muted); border-bottom-color: rgba(75,85,99,0.3); }
-  .no-collect {
-    background: #ECFDF5;
-    border: 1px solid #A7F3D0;
-    border-radius: 8px;
-    padding: 1rem 1.25rem;
-    margin-bottom: 1.25rem;
-  }
-  .no-collect ul { margin: 0; }
-  .no-collect li::marker { color: #059669; }
 </style>
 </head>
 <body>
 
 <header class="hero">
-  <div class="hero-logo" aria-hidden="true">P</div>
-  <h1>PadelRank Privacy Policy</h1>
-  <p class="hero-sub">Zero analytics. Zero ads. Zero tracking.</p>
+  <div class="hero-inner">
+    <h1>PadelRanks — Privacy Policy</h1>
+    <p class="hero-sub">Effective 10 May 2026</p>
+  </div>
 </header>
+
+<nav class="nav" aria-label="Document navigation">
+  <a href="index.html">Home</a>
+  <a href="terms.html">Terms of Service</a>
+</nav>
 
 <main>
 
   <div class="meta">
-    <div><strong>Effective date:</strong> 10 May 2026</div>
-    <div><strong>Provider:</strong> PadelRank — <a href="mailto:support@padelranks.app">support@padelranks.app</a></div>
+    <div><strong>Provider:</strong> PadelRanks — <a href="mailto:Juliancilea@gmail.com">Juliancilea@gmail.com</a></div>
   </div>
 
-  <p>PadelRank is an iOS and Android app that gives padel players access to national federation rankings, international pro rankings, tournaments, club information and a Danish "Find a match" community. The app currently covers <strong>18 countries</strong>:</p>
+  <p>PadelRanks is an iOS and Android app that gives padel players access to national federation rankings, international pro rankings, tournaments, club information and a Danish "Find a Match" community. The app currently covers <strong>18 countries</strong>:</p>
 
   <div class="countries">
     <div><strong>Rankedin-backed (13):</strong><br/>Denmark, Sweden, Germany, Austria, Croatia, Norway, Romania, Slovenia, Moldova, Hungary, Finland, Ukraine, Estonia.</div>
@@ -160,7 +198,7 @@
   <h2>1. Data we process</h2>
 
   <h3>1.1 Location data</h3>
-  <p>If you grant permission, PadelRank uses your location <strong>on your device</strong> to calculate the distance between you and padel tournaments and clubs, and to verify that you are physically located in Denmark when you sign in to the Community feature (see §1.6). Your location is never sent to our own servers as a stored record. Outgoing requests to third-party tournament providers (see §3) only include coordinates when you explicitly run a location-based search — and only as anonymous latitude/longitude, never your identity. If you deny the location permission, the rankings and tournament parts of the app still work — distance simply isn't shown — but the Community feature is unavailable because we cannot confirm you are in Denmark.</p>
+  <p>If you grant permission, PadelRanks uses your location <strong>on your device</strong> to calculate the distance between you and padel tournaments and clubs, and to verify that you are physically located in Denmark when you sign in to the Find a Match feature (see §1.6). Your location is never sent to our own servers as a stored record. Outgoing requests to third-party tournament providers (see §3) only include coordinates when you explicitly run a location-based search — and only as anonymous latitude/longitude, never your identity. If you deny the location permission, the rankings and tournament parts of the app still work — distance simply isn't shown — but the Find a Match feature is unavailable because we cannot confirm you are in Denmark.</p>
 
   <h3>1.2 Rankedin credentials (email + password)</h3>
   <p>If you choose to log in with your rankedin.com account:</p>
@@ -170,19 +208,19 @@
     <li>We run no servers that receive your Rankedin credentials.</li>
     <li>You can delete them at any time in the app's settings or by uninstalling the app.</li>
   </ul>
-  <p>PadelRank does not support logging in to FIP or Playtomic accounts — those back-ends are used only for public read-only data.</p>
+  <p>PadelRanks does not support logging in to FIP or Playtomic accounts — those back-ends are used only for public read-only data.</p>
 
   <h3>1.3 Third-party API data (rankings, tournaments, clubs, profiles)</h3>
   <p>The app fetches data from the public APIs listed in §3 to display rankings, tournament results and club information. This data is stored only temporarily in the app's on-device cache (AsyncStorage) to make the app faster; it is never forwarded anywhere.</p>
 
   <h3>1.4 Profile picture (optional)</h3>
-  <p>If you choose to add a profile picture from your camera or photo library, it is stored only locally on your device. The Community feature uses initials-based avatars — your local photo is never uploaded to the Community backend.</p>
+  <p>If you choose to add a profile picture from your camera or photo library, it is stored only locally on your device. The Find a Match feature uses initials-based avatars — your local photo is never uploaded to the Find a Match backend.</p>
 
   <h3>1.5 Player profile photos displayed in the app</h3>
   <p>Profile photos of other players shown in rankings and profile screens are sourced from the public APIs of Rankedin and the International Padel Federation (FIP) — they are not hosted by us. <strong>Photo availability varies by player and by country;</strong> where a photo is not available we display a generated avatar with the player's initials. The image URLs themselves are requested directly from the third-party CDN by your device and are cached on-device for performance. No personal identifier is attached to those requests.</p>
 
-  <h3>1.6 Community account and content (Apple / Google sign-in, posts, comments)</h3>
-  <p>The "Find a match" Community feature requires you to sign in with Apple or Google. When you do, PadelRank receives and stores the following on our backend (Supabase — see §3):</p>
+  <h3>1.6 Find a Match account and content (Apple / Google sign-in, posts, comments)</h3>
+  <p>The "Find a Match" feature requires you to sign in with Apple or Google. When you do, PadelRanks receives and stores the following on our backend (Supabase — see §3):</p>
   <ul>
     <li>A <strong>Supabase user id</strong> (random UUID) — used to identify your account.</li>
     <li>The <strong>email address</strong> returned by Apple or Google. Apple users may choose to share a relay email instead of their real address; we accept whichever form Apple returns.</li>
@@ -193,10 +231,15 @@
     <li>A <strong>rough one-time location check</strong> at sign-in confirming you are in Denmark. We do not store your exact GPS coordinates — only the boolean result of the country check is associated with your account, and only at sign-in time.</li>
   </ul>
   <p>We do <strong>not</strong> receive or store your Apple or Google password — the sign-in itself happens on Apple's / Google's servers, and we only receive the resulting identity token.</p>
-  <p>The Community feature is currently restricted to users physically located in Denmark.</p>
+  <p>The Find a Match feature is currently restricted to users physically located in Denmark.</p>
 
   <h3>1.7 Push notifications (optional)</h3>
-  <p>If you opt in, the app schedules <strong>on-device</strong> notifications for tournaments you follow and for new community posts in your selected postcode. These are local notifications scheduled by the OS — no push token is sent to our servers and no third-party push provider (FCM / APNs cloud, OneSignal, etc.) is involved.</p>
+  <p>If you opt in to notifications, we collect:</p>
+  <ul>
+    <li>An <strong>Expo push token</strong> — an opaque per-device identifier issued by Expo's push service. We store it in our Supabase backend together with your current notification preferences (mode, postal code, level window) so the server can deliver notifications when the app is closed.</li>
+    <li>The token is bound to your account; you can revoke it by signing out, switching off notifications in the app's bell-icon sheet, or revoking permission in the OS settings.</li>
+  </ul>
+  <p>Push delivery is fanned out via Expo's push service to Apple's APNs and Google's FCM. Expo doesn't see the message content beyond what we send (notification title + body). We don't share the push token with anyone else.</p>
 
   <h2>2. Data we do <em>not</em> collect</h2>
 
@@ -206,76 +249,69 @@
       <li>We show no ads.</li>
       <li>We do not sell or share data with any third party.</li>
       <li>We do not track you across apps or websites.</li>
-      <li>Outside of the optional Community sign-in, we do not require an account to use the app.</li>
+      <li>Outside of the optional Find a Match sign-in, we do not require an account to use the app.</li>
     </ul>
   </div>
 
   <h2>3. Third-party data sources and processors</h2>
 
-  <p>PadelRank communicates with the following services. When you use the app, requests are sent directly from your device — not through any server we operate, except for Supabase (see below).</p>
+  <p>PadelRanks communicates with the following services. When you use the app, requests are sent directly from your device — not through any server we operate, except for Supabase (see below).</p>
 
   <h3>3.1 Read-only data sources (rankings, tournaments, clubs)</h3>
   <ul>
-    <li><strong>Rankedin</strong> — national rankings, tournaments, player profiles and (optional) user login for the 13 Rankedin-backed countries. Public endpoints on <code>api.rankedin.com</code> and the Azure Front Door CDN that serves profile thumbnails (<code>rankedin-prod-cdn-adavg8d3dwfegkbd.z01.azurefd.net</code>). Rankedin privacy policy: <a href="https://www.rankedin.com/privacy">rankedin.com/privacy</a></li>
-    <li><strong>FIP (Federación Internacional de Pádel)</strong> — global pro rankings, international tournament calendar and player profile pages for Spain, Mexico, Argentina, Italy and France. Public WordPress REST API at <code>padelfip.com/wp-json/fip/v1/...</code> plus direct HTML scraping of public player pages at <code>padelfip.com/player/{slug}/</code>. FIP privacy policy: <a href="https://www.padelfip.com/privacy">padelfip.com/privacy</a></li>
-    <li><strong>Playtomic</strong> — amateur club-tournament discovery for Spain, Mexico, Argentina, Italy and France. Public <code>api.playtomic.io/v1/tournaments</code> endpoint with coordinate-based geographic seed queries. Playtomic privacy policy: <a href="https://playtomic.io/privacy">playtomic.io/privacy</a></li>
+    <li><strong>Rankedin</strong> — national rankings, tournaments, player profiles and (optional) user login for the 13 Rankedin-backed countries. Public endpoints on <code>api.rankedin.com</code>. Rankedin privacy policy: <a href="https://www.rankedin.com/privacy">rankedin.com/privacy</a></li>
+    <li><strong>FIP (Federación Internacional de Pádel)</strong> — global pro rankings and international tournament calendar for Spain, Mexico, Argentina, Italy and France. Public WordPress REST API at <code>padelfip.com/wp-json/fip/v1/...</code>. FIP privacy policy: <a href="https://www.padelfip.com/privacy">padelfip.com/privacy</a></li>
+    <li><strong>Playtomic</strong> — amateur club-tournament discovery for Spain, Mexico, Argentina, Italy and France. Public <code>api.playtomic.io/v1/tournaments</code> endpoint. Playtomic privacy policy: <a href="https://playtomic.io/privacy">playtomic.io/privacy</a></li>
   </ul>
 
-  <p>Profile photos specifically come from:</p>
+  <h3>3.2 Backend / data processor (Find a Match feature only)</h3>
   <ul>
-    <li>Rankedin's Azure Front Door CDN (<code>rankedin-prod-cdn-adavg8d3dwfegkbd.z01.azurefd.net/images/upload/player/{id}thumb.png</code>) for the 13 Rankedin-backed countries;</li>
-    <li>FIP's WordPress Media library (<code>padelfip.com/wp-content/uploads/…</code>) for the 5 FIP/Playtomic-backed countries.</li>
-  </ul>
-
-  <h3>3.2 Backend / data processor (Community feature only)</h3>
-  <ul>
-    <li><strong>Supabase</strong> (Supabase Inc., hosted in Frankfurt, Germany — EU region) acts as our <strong>data processor</strong> for the Community feature. Supabase stores your account record, posts, comments and "I'm in" joins inside a Postgres database hosted in the EU and is contractually bound by GDPR-compliant data-processing terms. Supabase privacy policy: <a href="https://supabase.com/privacy">supabase.com/privacy</a></li>
+    <li><strong>Supabase</strong> (Supabase Inc., hosted in Frankfurt, Germany — EU region) acts as our <strong>data processor</strong> for the Find a Match feature. Supabase stores your account record, posts, comments, "I'm in" joins and push subscription inside a Postgres database hosted in the EU and is contractually bound by GDPR-compliant data-processing terms. Supabase privacy policy: <a href="https://supabase.com/privacy">supabase.com/privacy</a></li>
     <li><strong>Apple Sign-In</strong> (Apple Inc.) — only used for authentication. Apple's privacy policy: <a href="https://www.apple.com/legal/privacy/">apple.com/legal/privacy</a></li>
     <li><strong>Google Sign-In</strong> (Google LLC) — only used for authentication. Google's privacy policy: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></li>
+    <li><strong>Expo Push Service</strong> (650 Industries, Inc.) — delivers push notifications to APNs / FCM on our behalf. Expo privacy policy: <a href="https://expo.dev/privacy">expo.dev/privacy</a></li>
   </ul>
 
-  <p>We do not run our own application servers. All Community data lives in Supabase; all read-only padel data lives at the third-party providers listed above.</p>
-
-  <p>No crash reporting, analytics or telemetry SDK is currently integrated into the app. Should we later enable crash reporting (via Sentry), only anonymised technical details (stack trace, device model, OS version) would be sent — never personal data, location or credentials — and this section of the policy will be updated before such a change takes effect.</p>
+  <p>We do not run our own application servers. All Find a Match data lives in Supabase; all read-only padel data lives at the third-party providers listed above.</p>
 
   <h2>4. Retention</h2>
 
   <ul>
     <li><strong>On-device cache</strong> (rankings, tournaments, clubs, photos): cleared on uninstall, or whenever the app's normal cache-eviction logic decides. You can also clear it by reinstalling.</li>
-    <li><strong>Community posts and comments</strong>: each post automatically expires <strong>7 days</strong> after it is created and is deleted from the database. Comments and "I'm in" joins on a post are deleted together with the post.</li>
-    <li><strong>Community account record</strong> (display name, postal code, user id, email): retained until you delete your account (see §5). Inactive accounts are not auto-purged at this time, but we may introduce inactivity-based deletion in the future and will update this section if we do.</li>
+    <li><strong>Find a Match posts and comments</strong>: each post automatically expires <strong>7 days</strong> after it is created and is deleted from the database. Comments and "I'm in" joins on a post are deleted together with the post.</li>
+    <li><strong>Find a Match account record</strong> (display name, postal code, user id, email, push token): retained until you delete your account (see §5).</li>
   </ul>
 
   <h2>5. Your rights (GDPR + UK GDPR + Swiss DPA)</h2>
 
   <p>You have the right to:</p>
   <ul>
-    <li><strong>Access</strong> — for the on-device parts of the app, all your data lives on your device. For the Community feature, write to <a href="mailto:support@padelranks.app">support@padelranks.app</a> and we will provide a copy of the data associated with your account.</li>
+    <li><strong>Access</strong> — for the on-device parts of the app, all your data lives on your device. For the Find a Match feature, write to <a href="mailto:Juliancilea@gmail.com">Juliancilea@gmail.com</a> and we will provide a copy of the data associated with your account.</li>
     <li><strong>Rectification</strong> — you can edit your display name and postal code in the app at any time.</li>
     <li><strong>Deletion</strong> —
       <ul>
         <li>On-device data: uninstall the app and all local data is wiped.</li>
-        <li>Community account and content: you can delete your account and all posts/comments inside the app (Community → bell icon → "Delete account"), or by writing to <a href="mailto:support@padelranks.app">support@padelranks.app</a>. Deletion is final — your Community user record, posts, comments and "I'm in" joins are removed from Supabase.</li>
+        <li>Find a Match account and content: you can delete your account and all posts/comments inside the app (Find a Match → bell icon → "Delete account"), or by writing to <a href="mailto:Juliancilea@gmail.com">Juliancilea@gmail.com</a>. Deletion is final — your user record, posts, comments, "I'm in" joins and push subscription are removed from Supabase.</li>
       </ul>
     </li>
-    <li><strong>Portability</strong> — you can export your Rankedin data directly from rankedin.com. For Community data, write to <a href="mailto:support@padelranks.app">support@padelranks.app</a> for a JSON export.</li>
-    <li><strong>Withdraw consent</strong> — you can sign out of the Community feature at any time from the bell-icon settings sheet. You can also revoke Apple / Google's authorisation in your Apple ID / Google Account settings.</li>
+    <li><strong>Portability</strong> — you can export your Rankedin data directly from rankedin.com. For Find a Match data, write to <a href="mailto:Juliancilea@gmail.com">Juliancilea@gmail.com</a> for a JSON export.</li>
+    <li><strong>Withdraw consent</strong> — you can sign out of the Find a Match feature at any time from the bell-icon settings sheet. You can also revoke Apple / Google's authorisation in your Apple ID / Google Account settings.</li>
     <li><strong>Complaint</strong> — you can file a complaint with your national Data Protection Authority (e.g. Datatilsynet in Denmark, IMY in Sweden, BfDI in Germany, DSB in Austria, AEPD in Spain, Garante in Italy, CNIL in France, ICO in the UK) if you believe your rights have been infringed.</li>
   </ul>
 
   <h2>6. Children</h2>
 
-  <p>PadelRank's Community feature is <strong>not directed at and may not be used by children under the age of 13</strong>. Apple and Google sign-in flows enforce minimum age requirements at the operating-system level. We do not knowingly collect data from children under 13. If you believe a child under 13 has created a Community account, please contact us at <a href="mailto:support@padelranks.app">support@padelranks.app</a> and we will delete the account and associated content.</p>
+  <p>PadelRanks's Find a Match feature is <strong>not directed at and may not be used by children under the age of 13</strong>. Apple and Google sign-in flows enforce minimum age requirements at the operating-system level. We do not knowingly collect data from children under 13. If you believe a child under 13 has created a Find a Match account, please contact us at <a href="mailto:Juliancilea@gmail.com">Juliancilea@gmail.com</a> and we will delete the account and associated content.</p>
 
-  <p>The non-Community parts of the app (rankings, tournaments, clubs) do not collect any personal data from any user, of any age.</p>
+  <p>The non-Find-a-Match parts of the app (rankings, tournaments, clubs) do not collect any personal data from any user, of any age.</p>
 
   <h2>7. Security</h2>
 
-  <p>Communication with all third-party APIs and with Supabase is encrypted with TLS. Community data inside Supabase is protected by row-level security (RLS) — you can only read and write your own posts, comments and joins, and the database refuses any operation that violates this. We rely on Supabase's underlying security measures (encryption at rest, secure key management, regular backups) for the database itself.</p>
+  <p>Communication with all third-party APIs and with Supabase is encrypted with TLS. Find a Match data inside Supabase is protected by row-level security (RLS) — you can only read and write your own posts, comments, joins and push subscriptions, and the database refuses any operation that violates this. We rely on Supabase's underlying security measures (encryption at rest, secure key management, regular backups) for the database itself.</p>
 
   <h2>8. International transfers</h2>
 
-  <p>Supabase hosts the Community database in <strong>Frankfurt, Germany</strong> — inside the EU. Apple and Google may process authentication data outside the EU under their own GDPR-compliant transfer mechanisms.</p>
+  <p>Supabase hosts the Find a Match database in <strong>Frankfurt, Germany</strong> — inside the EU. Apple, Google and Expo may process authentication and push-delivery data outside the EU under their own GDPR-compliant transfer mechanisms.</p>
 
   <h2>9. Changes</h2>
 
@@ -283,12 +319,12 @@
 
   <h2>10. Contact</h2>
 
-  <p>Questions, deletion requests, or data exports? Write to <a href="mailto:support@padelranks.app"><strong>support@padelranks.app</strong></a>.</p>
+  <p>Questions, deletion requests, or data exports? Write to <strong><a href="mailto:Juliancilea@gmail.com">Juliancilea@gmail.com</a></strong>.</p>
 
 </main>
 
 <footer>
-  © 2026 PadelRank · <a href="mailto:support@padelranks.app">support@padelranks.app</a>
+  © 2026 PadelRanks · <a href="mailto:Juliancilea@gmail.com">Juliancilea@gmail.com</a>
 </footer>
 
 </body>
