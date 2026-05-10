@@ -1,122 +1,295 @@
-# PadelRank — Privacy Policy
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="PadelRank — privacy policy. An app that gives padel players access to national federation rankings, international pro rankings, tournaments, club information and a Danish 'Find a match' community. Zero analytics, zero ads, zero tracking." />
+<title>PadelRank — Privacy Policy</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%231E40AF'/%3E%3Ctext x='12' y='16' text-anchor='middle' fill='white' font-family='system-ui' font-weight='700' font-size='14'%3EP%3C/text%3E%3C/svg%3E" />
+<style>
+  :root {
+    --brand:      #1E40AF;
+    --brand-dark: #1E3A8A;
+    --text:       #111827;
+    --muted:      #4B5563;
+    --light:      #E5E7EB;
+    --bg:         #FFFFFF;
+    --surface:    #F9FAFB;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--text);
+    background: var(--bg);
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+  .hero {
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+    color: white;
+    padding: 3.5rem 1.5rem 3rem;
+    text-align: center;
+  }
+  .hero-logo {
+    display: inline-flex;
+    width: 64px; height: 64px;
+    background: rgba(255,255,255,0.18);
+    border-radius: 16px;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    letter-spacing: -0.03em;
+  }
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+    letter-spacing: -0.02em;
+  }
+  .hero-sub {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin: 0;
+  }
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+  }
+  .meta {
+    background: var(--surface);
+    border-left: 4px solid var(--brand);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    margin: 0 0 2rem;
+    font-size: 0.95rem;
+  }
+  .meta strong { color: var(--text); }
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--brand);
+    margin: 2.5rem 0 0.75rem;
+    letter-spacing: -0.01em;
+  }
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 1.5rem 0 0.5rem;
+  }
+  p { margin: 0 0 1rem; }
+  ul { margin: 0 0 1.25rem; padding-left: 1.5rem; }
+  li { margin-bottom: 0.4rem; }
+  a {
+    color: var(--brand);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(30,64,175,0.25);
+    transition: border-color 0.15s;
+  }
+  a:hover { border-bottom-color: var(--brand); }
+  strong { color: var(--text); font-weight: 600; }
+  .countries {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem 1.25rem;
+    background: var(--surface);
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    margin: 0.5rem 0 1.25rem;
+    font-size: 0.95rem;
+  }
+  @media (max-width: 560px) {
+    .countries { grid-template-columns: 1fr; }
+    .hero { padding: 2.5rem 1rem 2rem; }
+    h1 { font-size: 1.6rem; }
+    main { padding: 2rem 1rem 3rem; }
+  }
+  footer {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem;
+    border-top: 1px solid var(--light);
+    font-size: 0.9rem;
+    color: var(--muted);
+    text-align: center;
+  }
+  footer a { color: var(--muted); border-bottom-color: rgba(75,85,99,0.3); }
+  .no-collect {
+    background: #ECFDF5;
+    border: 1px solid #A7F3D0;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+  .no-collect ul { margin: 0; }
+  .no-collect li::marker { color: #059669; }
+</style>
+</head>
+<body>
 
-**Effective date:** 10 May 2026
-**Provider:** PadelRank — support@padelranks.app
+<header class="hero">
+  <div class="hero-logo" aria-hidden="true">P</div>
+  <h1>PadelRank Privacy Policy</h1>
+  <p class="hero-sub">Zero analytics. Zero ads. Zero tracking.</p>
+</header>
 
-PadelRank is an iOS and Android app that gives padel players access to national federation rankings, international pro rankings, tournaments, club information and a Danish "Find a match" community. The app currently covers **18 countries**:
+<main>
 
-- **Rankedin-backed (13):** Denmark, Sweden, Germany, Austria, Croatia, Norway, Romania, Slovenia, Moldova, Hungary, Finland, Ukraine, Estonia.
-- **FIP / Playtomic-backed (5):** Spain, Mexico, Argentina, Italy, France.
+  <div class="meta">
+    <div><strong>Effective date:</strong> 10 May 2026</div>
+    <div><strong>Provider:</strong> PadelRank — <a href="mailto:support@padelranks.app">support@padelranks.app</a></div>
+  </div>
 
-We take your privacy seriously and only process the data strictly required for the app to function.
+  <p>PadelRank is an iOS and Android app that gives padel players access to national federation rankings, international pro rankings, tournaments, club information and a Danish "Find a match" community. The app currently covers <strong>18 countries</strong>:</p>
 
-## 1. Data we process
+  <div class="countries">
+    <div><strong>Rankedin-backed (13):</strong><br/>Denmark, Sweden, Germany, Austria, Croatia, Norway, Romania, Slovenia, Moldova, Hungary, Finland, Ukraine, Estonia.</div>
+    <div><strong>FIP / Playtomic-backed (5):</strong><br/>Spain, Mexico, Argentina, Italy, France.</div>
+  </div>
 
-### 1.1 Location data
-If you grant permission, PadelRank uses your location **on your device** to calculate the distance between you and padel tournaments / clubs, and to verify that you are physically located in Denmark when you sign in to the Community feature (see §1.6). Your location is never sent to our own servers as a stored record. Outgoing requests to third-party tournament providers (see §3) only include coordinates when you explicitly run a location-based search — and only as anonymous latitude/longitude, never your identity. If you deny the location permission, the rankings and tournament parts of the app still work — distance simply isn't shown — but the Community feature is unavailable because we cannot confirm you are in Denmark.
+  <p>We take your privacy seriously and only process the data strictly required for the app to function.</p>
 
-### 1.2 Rankedin credentials (email + password)
-If you choose to log in with your rankedin.com account:
-- Credentials are sent directly from your device to rankedin.com over encrypted HTTPS.
-- They are stored only in iOS Keychain / Android Keystore on your device (if you enable Face ID / fingerprint login).
-- We run no servers that receive your Rankedin credentials.
-- You can delete them at any time in the app's settings or by uninstalling the app.
+  <h2>1. Data we process</h2>
 
-PadelRank does not support logging in to FIP or Playtomic accounts — those back-ends are used only for public read-only data.
+  <h3>1.1 Location data</h3>
+  <p>If you grant permission, PadelRank uses your location <strong>on your device</strong> to calculate the distance between you and padel tournaments and clubs, and to verify that you are physically located in Denmark when you sign in to the Community feature (see §1.6). Your location is never sent to our own servers as a stored record. Outgoing requests to third-party tournament providers (see §3) only include coordinates when you explicitly run a location-based search — and only as anonymous latitude/longitude, never your identity. If you deny the location permission, the rankings and tournament parts of the app still work — distance simply isn't shown — but the Community feature is unavailable because we cannot confirm you are in Denmark.</p>
 
-### 1.3 Third-party API data (rankings, tournaments, clubs, profiles)
-The app fetches data from the public APIs listed in §3 to display rankings, tournament results and club information. This data is stored only temporarily in the app's on-device cache (AsyncStorage) to make the app faster; it is never forwarded anywhere.
+  <h3>1.2 Rankedin credentials (email + password)</h3>
+  <p>If you choose to log in with your rankedin.com account:</p>
+  <ul>
+    <li>Credentials are sent directly from your device to rankedin.com over encrypted HTTPS.</li>
+    <li>They are stored only in iOS Keychain / Android Keystore on your device (if you enable Face ID / fingerprint login).</li>
+    <li>We run no servers that receive your Rankedin credentials.</li>
+    <li>You can delete them at any time in the app's settings or by uninstalling the app.</li>
+  </ul>
+  <p>PadelRank does not support logging in to FIP or Playtomic accounts — those back-ends are used only for public read-only data.</p>
 
-### 1.4 Profile picture (optional)
-If you choose to add a profile picture from your camera or photo library, it is stored only locally on your device. The Community feature uses initials-based avatars — your local photo is never uploaded to the Community backend.
+  <h3>1.3 Third-party API data (rankings, tournaments, clubs, profiles)</h3>
+  <p>The app fetches data from the public APIs listed in §3 to display rankings, tournament results and club information. This data is stored only temporarily in the app's on-device cache (AsyncStorage) to make the app faster; it is never forwarded anywhere.</p>
 
-### 1.5 Player profile photos displayed in the app
-Profile photos of other players shown in rankings and profile screens are sourced from the public APIs of Rankedin and the International Padel Federation (FIP) — they are not hosted by us. Photo availability varies by player and by country; where a photo is not available we display a generated avatar with the player's initials. The image URLs themselves are requested directly from the third-party CDN by your device and are cached on-device for performance; no personal identifier is attached to those requests.
+  <h3>1.4 Profile picture (optional)</h3>
+  <p>If you choose to add a profile picture from your camera or photo library, it is stored only locally on your device. The Community feature uses initials-based avatars — your local photo is never uploaded to the Community backend.</p>
 
-### 1.6 Community account and content (Apple / Google sign-in, posts, comments)
-The "Find a match" Community feature requires you to sign in with Apple or Google. When you do, PadelRank receives and stores the following on our backend (Supabase — see §3):
+  <h3>1.5 Player profile photos displayed in the app</h3>
+  <p>Profile photos of other players shown in rankings and profile screens are sourced from the public APIs of Rankedin and the International Padel Federation (FIP) — they are not hosted by us. <strong>Photo availability varies by player and by country;</strong> where a photo is not available we display a generated avatar with the player's initials. The image URLs themselves are requested directly from the third-party CDN by your device and are cached on-device for performance. No personal identifier is attached to those requests.</p>
 
-- A **Supabase user id** (random UUID) — used to identify your account.
-- The **email address** returned by Apple or Google. Apple users may choose to share a relay email instead of their real address; we accept whichever form Apple returns.
-- Your **chosen display name** — the name shown on your posts. You set this on first sign-in. You can edit it later.
-- Your **chosen Danish postal code** — used to scope which posts you see and to attach a postcode to posts you create.
-- The **content of any post or comment you create** — the message text, your selected level range, your match date, and the optional time text.
-- Your **"I'm in" joins** on other users' posts.
-- A **rough one-time location check** at sign-in confirming you are in Denmark. We do not store your exact GPS coordinates — only the boolean result of the country check is associated with your account, and only at sign-in time.
+  <h3>1.6 Community account and content (Apple / Google sign-in, posts, comments)</h3>
+  <p>The "Find a match" Community feature requires you to sign in with Apple or Google. When you do, PadelRank receives and stores the following on our backend (Supabase — see §3):</p>
+  <ul>
+    <li>A <strong>Supabase user id</strong> (random UUID) — used to identify your account.</li>
+    <li>The <strong>email address</strong> returned by Apple or Google. Apple users may choose to share a relay email instead of their real address; we accept whichever form Apple returns.</li>
+    <li>Your <strong>chosen display name</strong> — the name shown on your posts. You set this on first sign-in. You can edit it later.</li>
+    <li>Your <strong>chosen Danish postal code</strong> — used to scope which posts you see and to attach a postcode to posts you create.</li>
+    <li>The <strong>content of any post or comment you create</strong> — the message text, your selected level range, your match date, and the optional time text.</li>
+    <li>Your <strong>"I'm in" joins</strong> on other users' posts.</li>
+    <li>A <strong>rough one-time location check</strong> at sign-in confirming you are in Denmark. We do not store your exact GPS coordinates — only the boolean result of the country check is associated with your account, and only at sign-in time.</li>
+  </ul>
+  <p>We do <strong>not</strong> receive or store your Apple or Google password — the sign-in itself happens on Apple's / Google's servers, and we only receive the resulting identity token.</p>
+  <p>The Community feature is currently restricted to users physically located in Denmark.</p>
 
-We do **not** receive or store your Apple or Google password — the sign-in itself happens on Apple's / Google's servers, and we only receive the resulting identity token.
+  <h3>1.7 Push notifications (optional)</h3>
+  <p>If you opt in, the app schedules <strong>on-device</strong> notifications for tournaments you follow and for new community posts in your selected postcode. These are local notifications scheduled by the OS — no push token is sent to our servers and no third-party push provider (FCM / APNs cloud, OneSignal, etc.) is involved.</p>
 
-The Community feature is currently restricted to users physically located in Denmark.
+  <h2>2. Data we do <em>not</em> collect</h2>
 
-### 1.7 Push notifications (optional)
-If you opt in, the app schedules **on-device** notifications for tournaments you follow and for new community posts in your selected postcode. These are local notifications scheduled by the OS — no push token is sent to our servers and no third-party push provider (FCM / APNs cloud, OneSignal, etc.) is involved.
+  <div class="no-collect">
+    <ul>
+      <li>We have no analytics (no Google Analytics, Firebase, Facebook SDK, Mixpanel, etc.).</li>
+      <li>We show no ads.</li>
+      <li>We do not sell or share data with any third party.</li>
+      <li>We do not track you across apps or websites.</li>
+      <li>Outside of the optional Community sign-in, we do not require an account to use the app.</li>
+    </ul>
+  </div>
 
-## 2. Data we do **not** collect
+  <h2>3. Third-party data sources and processors</h2>
 
-- We have no analytics (no Google Analytics, Firebase, Facebook SDK, Mixpanel, etc.).
-- We show no ads.
-- We do not sell or share data with any third party.
-- We do not track you across apps or websites.
-- Outside of the optional Community sign-in, we do not require an account to use the app.
+  <p>PadelRank communicates with the following services. When you use the app, requests are sent directly from your device — not through any server we operate, except for Supabase (see below).</p>
 
-## 3. Third-party data sources and processors
+  <h3>3.1 Read-only data sources (rankings, tournaments, clubs)</h3>
+  <ul>
+    <li><strong>Rankedin</strong> — national rankings, tournaments, player profiles and (optional) user login for the 13 Rankedin-backed countries. Public endpoints on <code>api.rankedin.com</code> and the Azure Front Door CDN that serves profile thumbnails (<code>rankedin-prod-cdn-adavg8d3dwfegkbd.z01.azurefd.net</code>). Rankedin privacy policy: <a href="https://www.rankedin.com/privacy">rankedin.com/privacy</a></li>
+    <li><strong>FIP (Federación Internacional de Pádel)</strong> — global pro rankings, international tournament calendar and player profile pages for Spain, Mexico, Argentina, Italy and France. Public WordPress REST API at <code>padelfip.com/wp-json/fip/v1/...</code> plus direct HTML scraping of public player pages at <code>padelfip.com/player/{slug}/</code>. FIP privacy policy: <a href="https://www.padelfip.com/privacy">padelfip.com/privacy</a></li>
+    <li><strong>Playtomic</strong> — amateur club-tournament discovery for Spain, Mexico, Argentina, Italy and France. Public <code>api.playtomic.io/v1/tournaments</code> endpoint with coordinate-based geographic seed queries. Playtomic privacy policy: <a href="https://playtomic.io/privacy">playtomic.io/privacy</a></li>
+  </ul>
 
-PadelRank communicates with the following services. When you use the app, requests are sent directly from your device — not through any server we operate, except for Supabase (see below).
+  <p>Profile photos specifically come from:</p>
+  <ul>
+    <li>Rankedin's Azure Front Door CDN (<code>rankedin-prod-cdn-adavg8d3dwfegkbd.z01.azurefd.net/images/upload/player/{id}thumb.png</code>) for the 13 Rankedin-backed countries;</li>
+    <li>FIP's WordPress Media library (<code>padelfip.com/wp-content/uploads/…</code>) for the 5 FIP/Playtomic-backed countries.</li>
+  </ul>
 
-### 3.1 Read-only data sources (rankings, tournaments, clubs)
-- **Rankedin** — national rankings, tournaments, player profiles and (optional) user login for the 13 Rankedin-backed countries. Public endpoints on `api.rankedin.com` and the Azure Front Door CDN that serves profile thumbnails (`rankedin-prod-cdn-adavg8d3dwfegkbd.z01.azurefd.net`). Rankedin privacy policy: https://www.rankedin.com/privacy
-- **FIP (Federación Internacional de Pádel)** — global pro rankings, international tournament calendar and player profile pages for Spain, Mexico, Argentina, Italy and France. Public WordPress REST API at `padelfip.com/wp-json/fip/v1/...` plus direct HTML scraping of public player pages at `padelfip.com/player/{slug}/`. FIP privacy policy: https://www.padelfip.com/privacy
-- **Playtomic** — amateur club-tournament discovery for Spain, Mexico, Argentina, Italy and France. Public `api.playtomic.io/v1/tournaments` endpoint with coordinate-based geographic seed queries. Playtomic privacy policy: https://playtomic.io/privacy
+  <h3>3.2 Backend / data processor (Community feature only)</h3>
+  <ul>
+    <li><strong>Supabase</strong> (Supabase Inc., hosted in Frankfurt, Germany — EU region) acts as our <strong>data processor</strong> for the Community feature. Supabase stores your account record, posts, comments and "I'm in" joins inside a Postgres database hosted in the EU and is contractually bound by GDPR-compliant data-processing terms. Supabase privacy policy: <a href="https://supabase.com/privacy">supabase.com/privacy</a></li>
+    <li><strong>Apple Sign-In</strong> (Apple Inc.) — only used for authentication. Apple's privacy policy: <a href="https://www.apple.com/legal/privacy/">apple.com/legal/privacy</a></li>
+    <li><strong>Google Sign-In</strong> (Google LLC) — only used for authentication. Google's privacy policy: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></li>
+  </ul>
 
-Profile photos specifically come from:
-- Rankedin's Azure Front Door CDN (`rankedin-prod-cdn-adavg8d3dwfegkbd.z01.azurefd.net/images/upload/player/{id}thumb.png`) for the 13 Rankedin-backed countries;
-- FIP's WordPress Media library (`padelfip.com/wp-content/uploads/...`) for the 5 FIP/Playtomic-backed countries.
+  <p>We do not run our own application servers. All Community data lives in Supabase; all read-only padel data lives at the third-party providers listed above.</p>
 
-### 3.2 Backend / data processor (Community feature only)
-- **Supabase** (Supabase Inc., hosted in Frankfurt, Germany — EU region) acts as our **data processor** for the Community feature. Supabase stores your account record, posts, comments and "I'm in" joins inside a Postgres database hosted in the EU and is contractually bound by GDPR-compliant data-processing terms. Supabase privacy policy: https://supabase.com/privacy
-- **Apple Sign-In** (Apple Inc.) — only used for authentication. Apple's privacy policy: https://www.apple.com/legal/privacy/
-- **Google Sign-In** (Google LLC) — only used for authentication. Google's privacy policy: https://policies.google.com/privacy
+  <p>No crash reporting, analytics or telemetry SDK is currently integrated into the app. Should we later enable crash reporting (via Sentry), only anonymised technical details (stack trace, device model, OS version) would be sent — never personal data, location or credentials — and this section of the policy will be updated before such a change takes effect.</p>
 
-We do not run our own application servers. All Community data lives in Supabase; all read-only padel data lives at the third-party providers listed above.
+  <h2>4. Retention</h2>
 
-No crash reporting, analytics or telemetry SDK is currently integrated into the app. Should we later enable crash reporting (via Sentry), only anonymised technical details (stack trace, device model, OS version) would be sent — never personal data, location or credentials — and this section of the policy will be updated before such a change takes effect.
+  <ul>
+    <li><strong>On-device cache</strong> (rankings, tournaments, clubs, photos): cleared on uninstall, or whenever the app's normal cache-eviction logic decides. You can also clear it by reinstalling.</li>
+    <li><strong>Community posts and comments</strong>: each post automatically expires <strong>7 days</strong> after it is created and is deleted from the database. Comments and "I'm in" joins on a post are deleted together with the post.</li>
+    <li><strong>Community account record</strong> (display name, postal code, user id, email): retained until you delete your account (see §5). Inactive accounts are not auto-purged at this time, but we may introduce inactivity-based deletion in the future and will update this section if we do.</li>
+  </ul>
 
-## 4. Retention
+  <h2>5. Your rights (GDPR + UK GDPR + Swiss DPA)</h2>
 
-- **On-device cache** (rankings, tournaments, clubs, photos): cleared on uninstall, or whenever the app's normal cache-eviction logic decides. You can also clear it by reinstalling.
-- **Community posts and comments**: each post automatically expires **7 days** after it is created and is deleted from the database. Comments and "I'm in" joins on a post are deleted together with the post.
-- **Community account record** (display name, postal code, user id, email): retained until you delete your account (see §5). Inactive accounts are not auto-purged at this time, but we may introduce inactivity-based deletion in the future and will update this section if we do.
+  <p>You have the right to:</p>
+  <ul>
+    <li><strong>Access</strong> — for the on-device parts of the app, all your data lives on your device. For the Community feature, write to <a href="mailto:support@padelranks.app">support@padelranks.app</a> and we will provide a copy of the data associated with your account.</li>
+    <li><strong>Rectification</strong> — you can edit your display name and postal code in the app at any time.</li>
+    <li><strong>Deletion</strong> —
+      <ul>
+        <li>On-device data: uninstall the app and all local data is wiped.</li>
+        <li>Community account and content: you can delete your account and all posts/comments inside the app (Community → bell icon → "Delete account"), or by writing to <a href="mailto:support@padelranks.app">support@padelranks.app</a>. Deletion is final — your Community user record, posts, comments and "I'm in" joins are removed from Supabase.</li>
+      </ul>
+    </li>
+    <li><strong>Portability</strong> — you can export your Rankedin data directly from rankedin.com. For Community data, write to <a href="mailto:support@padelranks.app">support@padelranks.app</a> for a JSON export.</li>
+    <li><strong>Withdraw consent</strong> — you can sign out of the Community feature at any time from the bell-icon settings sheet. You can also revoke Apple / Google's authorisation in your Apple ID / Google Account settings.</li>
+    <li><strong>Complaint</strong> — you can file a complaint with your national Data Protection Authority (e.g. Datatilsynet in Denmark, IMY in Sweden, BfDI in Germany, DSB in Austria, AEPD in Spain, Garante in Italy, CNIL in France, ICO in the UK) if you believe your rights have been infringed.</li>
+  </ul>
 
-## 5. Your rights (GDPR + UK GDPR + Swiss DPA)
+  <h2>6. Children</h2>
 
-You have the right to:
-- **Access** — for the on-device parts of the app, all your data lives on your device. For the Community feature, write to support@padelranks.app and we will provide a copy of the data associated with your account.
-- **Rectification** — you can edit your display name and postal code in the app at any time.
-- **Deletion** —
-  - On-device data: uninstall the app and all local data is wiped.
-  - Community account and content: you can delete your account and all posts/comments inside the app (Community → bell icon → "Delete account"), or by writing to support@padelranks.app. Deletion is final — your Community user record, posts, comments and "I'm in" joins are removed from Supabase.
-- **Portability** — you can export your Rankedin data directly from rankedin.com. For Community data, write to support@padelranks.app for a JSON export.
-- **Withdraw consent** — you can sign out of the Community feature at any time from the bell-icon settings sheet. You can also revoke Apple / Google's authorisation in your Apple ID / Google Account settings.
-- **Complaint** — you can file a complaint with your national Data Protection Authority (e.g. Datatilsynet in Denmark, IMY in Sweden, BfDI in Germany, DSB in Austria, AEPD in Spain, Garante in Italy, CNIL in France, ICO in the UK) if you believe your rights have been infringed.
+  <p>PadelRank's Community feature is <strong>not directed at and may not be used by children under the age of 13</strong>. Apple and Google sign-in flows enforce minimum age requirements at the operating-system level. We do not knowingly collect data from children under 13. If you believe a child under 13 has created a Community account, please contact us at <a href="mailto:support@padelranks.app">support@padelranks.app</a> and we will delete the account and associated content.</p>
 
-## 6. Children
+  <p>The non-Community parts of the app (rankings, tournaments, clubs) do not collect any personal data from any user, of any age.</p>
 
-PadelRank's Community feature is **not directed at and may not be used by children under the age of 13**. Apple and Google sign-in flows enforce minimum age requirements at the operating-system level. We do not knowingly collect data from children under 13. If you believe a child under 13 has created a Community account, please contact us at support@padelranks.app and we will delete the account and associated content.
+  <h2>7. Security</h2>
 
-The non-Community parts of the app (rankings, tournaments, clubs) do not collect any personal data from any user, of any age.
+  <p>Communication with all third-party APIs and with Supabase is encrypted with TLS. Community data inside Supabase is protected by row-level security (RLS) — you can only read and write your own posts, comments and joins, and the database refuses any operation that violates this. We rely on Supabase's underlying security measures (encryption at rest, secure key management, regular backups) for the database itself.</p>
 
-## 7. Security
+  <h2>8. International transfers</h2>
 
-Communication with all third-party APIs and with Supabase is encrypted with TLS. Community data inside Supabase is protected by row-level security (RLS) — you can only read and write your own posts, comments and joins, and the database refuses any operation that violates this. We rely on Supabase's underlying security measures (encryption at rest, secure key management, regular backups) for the database itself.
+  <p>Supabase hosts the Community database in <strong>Frankfurt, Germany</strong> — inside the EU. Apple and Google may process authentication data outside the EU under their own GDPR-compliant transfer mechanisms.</p>
 
-## 8. International transfers
+  <h2>9. Changes</h2>
 
-Supabase hosts the Community database in **Frankfurt, Germany** — inside the EU. Apple and Google may process authentication data outside the EU under their own GDPR-compliant transfer mechanisms.
+  <p>Changes to this policy will be published on this page together with an updated effective date. Material changes (e.g. new categories of data, new processors) will be announced in the app before they take effect.</p>
 
-## 9. Changes
+  <h2>10. Contact</h2>
 
-Changes to this policy will be published on this page together with an updated effective date. Material changes (e.g. new categories of data, new processors) will be announced in the app before they take effect.
+  <p>Questions, deletion requests, or data exports? Write to <a href="mailto:support@padelranks.app"><strong>support@padelranks.app</strong></a>.</p>
 
-## 10. Contact
+</main>
 
-Questions, deletion requests, or data exports? Write to **support@padelranks.app**.
+<footer>
+  © 2026 PadelRank · <a href="mailto:support@padelranks.app">support@padelranks.app</a>
+</footer>
+
+</body>
+</html>
