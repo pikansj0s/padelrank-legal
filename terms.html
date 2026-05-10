@@ -3,18 +3,21 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="PadelRanks — Terms of Service." />
-<title>PadelRanks — Terms of Service</title>
+<meta name="description" content="PadelRank — Terms of Service. Rules for the PadelRank app and the Find a Match community feature." />
+<title>PadelRank — Terms of Service</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%231E40AF'/%3E%3Ctext x='12' y='16' text-anchor='middle' fill='white' font-family='system-ui' font-weight='700' font-size='14'%3EP%3C/text%3E%3C/svg%3E" />
 <style>
   :root {
-    --brand: #0A0F0D;
-    --accent: #C5F947;
-    --text: #111827;
-    --muted: #4B5563;
-    --bg: #FFFFFF;
-    --surface: #F9FAFB;
+    --brand:      #1E40AF;
+    --brand-dark: #1E3A8A;
+    --text:       #111827;
+    --muted:      #4B5563;
+    --light:      #E5E7EB;
+    --bg:         #FFFFFF;
+    --surface:    #F9FAFB;
   }
   * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     font-size: 17px;
@@ -25,88 +28,204 @@
     padding: 0;
     -webkit-font-smoothing: antialiased;
   }
-  header {
-    background: var(--brand);
+  .hero {
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
     color: white;
-    padding: 28px 24px;
-    border-bottom: 4px solid var(--accent);
+    padding: 3.5rem 1.5rem 3rem;
+    text-align: center;
   }
-  header h1 { margin: 0; font-size: 28px; letter-spacing: -0.5px; }
-  header .sub { color: rgba(255,255,255,0.75); margin-top: 6px; font-size: 15px; }
-  main { max-width: 760px; margin: 0 auto; padding: 32px 24px 80px; }
-  h2 { margin-top: 36px; font-size: 22px; color: var(--brand); }
-  h3 { margin-top: 24px; font-size: 17px; color: var(--brand); }
-  p, li { color: var(--muted); }
-  a { color: var(--brand); }
-  ul { padding-left: 22px; }
-  footer { text-align: center; color: #6B7280; padding: 24px; font-size: 13px; border-top: 1px solid #E5E7EB; }
+  .hero-logo {
+    display: inline-flex;
+    width: 64px; height: 64px;
+    background: rgba(255,255,255,0.18);
+    border-radius: 16px;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    letter-spacing: -0.03em;
+  }
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+    letter-spacing: -0.02em;
+  }
+  .hero-sub {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin: 0;
+  }
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+  }
   .meta {
     background: var(--surface);
-    border-left: 4px solid var(--accent);
-    padding: 14px 18px;
-    border-radius: 8px;
-    margin-bottom: 20px;
+    border-left: 4px solid var(--brand);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    margin: 0 0 2rem;
+    font-size: 0.95rem;
   }
   .meta strong { color: var(--text); }
-  .nav {
-    margin-bottom: 20px;
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--brand);
+    margin: 2.5rem 0 0.75rem;
+    letter-spacing: -0.01em;
   }
-  .nav a {
-    display: inline-block;
-    padding: 8px 14px;
-    border-radius: 100px;
-    background: var(--surface);
-    border: 1px solid #E5E7EB;
-    text-decoration: none;
-    color: var(--text);
+  h3 {
+    font-size: 1.1rem;
     font-weight: 600;
-    font-size: 14px;
+    color: var(--text);
+    margin: 1.5rem 0 0.5rem;
   }
-  .nav a:hover { background: var(--accent); border-color: var(--accent); }
+  p { margin: 0 0 1rem; }
+  ul { margin: 0 0 1.25rem; padding-left: 1.5rem; }
+  li { margin-bottom: 0.4rem; }
+  a {
+    color: var(--brand);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(30,64,175,0.25);
+    transition: border-color 0.15s;
+  }
+  a:hover { border-bottom-color: var(--brand); }
+  strong { color: var(--text); font-weight: 600; }
+  @media (max-width: 560px) {
+    .hero { padding: 2.5rem 1rem 2rem; }
+    h1 { font-size: 1.6rem; }
+    main { padding: 2rem 1rem 3rem; }
+  }
+  footer {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem;
+    border-top: 1px solid var(--light);
+    font-size: 0.9rem;
+    color: var(--muted);
+    text-align: center;
+  }
+  footer a { color: var(--muted); border-bottom-color: rgba(75,85,99,0.3); }
 </style>
 </head>
 <body>
-<header>
-  <h1>PadelRanks — Terms of Service</h1>
-  <div class="sub">Effective 22 April 2026</div>
+
+<header class="hero">
+  <div class="hero-logo" aria-hidden="true">P</div>
+  <h1>PadelRank Terms of Service</h1>
+  <p class="hero-sub">The rules for using the app and the Find a Match community.</p>
 </header>
+
 <main>
-  <div class="nav">
-    <a href="./">Home</a>
-    <a href="./privacy-policy.html">Privacy Policy</a>
-  </div>
 
   <div class="meta">
-    <div><strong>Provider:</strong> PadelRanks</div>
+    <div><strong>Effective date:</strong> 10 May 2026</div>
+    <div><strong>Provider:</strong> PadelRank — <a href="mailto:support@padelranks.app">support@padelranks.app</a></div>
   </div>
 
   <h2>1. Acceptance of terms</h2>
-  <p>By downloading, installing, or using PadelRanks, you accept these terms. If you do not accept them, please uninstall the app.</p>
+  <p>By downloading, installing, or using PadelRank you accept these terms. If you do not accept them, please uninstall the app. By signing in to the Community feature, you additionally accept the Community-specific rules in §6 below.</p>
 
   <h2>2. Description of the service</h2>
-  <p>PadelRanks is a free app that gives access to padel rankings, tournaments, team leagues and club information. It reads public data from three independent sources: <strong>Rankedin</strong> (national federations across 13 European countries), <strong>FIP</strong> (Premier Padel and international pro rankings, with deep coverage for Spain, Mexico, Argentina, Italy and France) and <strong>Playtomic</strong> (amateur club tournaments across 60+ countries worldwide). PadelRanks is independent of all three and is not an official product of any of them.</p>
+  <p>PadelRank is a free app that gives access to padel rankings, tournaments and club information across 18 countries (Denmark, Sweden, Germany, Austria, Croatia, Norway, Romania, Slovenia, Moldova, Hungary, Finland, Ukraine, Estonia, Spain, Mexico, Argentina, Italy, France) and a Danish "Find a match" community.</p>
+  <p>PadelRank reads from three independent public data sources: <strong>Rankedin</strong> (rankedin.com), <strong>FIP</strong> (padelfip.com) and <strong>Playtomic</strong> (playtomic.io). PadelRank is <strong>independent</strong> of all three and is not an official product of any of them.</p>
+  <p>The Community feature uses <strong>Supabase</strong> (supabase.com) to store user accounts, posts, comments and "I'm in" joins. PadelRank is not affiliated with Supabase, Apple or Google beyond using their published services.</p>
 
   <h2>3. Use of third-party data</h2>
-  <p>The data displayed inside PadelRanks is owned by the respective providers (Rankedin, FIP, Playtomic). You must comply with each provider's own terms when using their data via PadelRanks:</p>
+  <p>The data displayed inside PadelRank is owned by the respective providers (Rankedin, FIP, Playtomic). You must comply with each provider's own terms when using their data via PadelRank:</p>
   <ul>
-    <li>Rankedin: <a href="https://www.rankedin.com/terms">rankedin.com/terms</a></li>
-    <li>FIP: <a href="https://www.padelfip.com/terms">padelfip.com/terms</a></li>
-    <li>Playtomic: <a href="https://playtomic.io/terms">playtomic.io/terms</a></li>
+    <li>Rankedin terms: <a href="https://www.rankedin.com/terms">rankedin.com/terms</a></li>
+    <li>FIP terms: <a href="https://www.padelfip.com/terms">padelfip.com/terms</a></li>
+    <li>Playtomic terms: <a href="https://playtomic.io/terms">playtomic.io/terms</a></li>
   </ul>
 
   <h2>4. No warranty</h2>
-  <p>PadelRanks is provided "as is". We make no guarantee that the app will always work without errors, that data from Rankedin, FIP or Playtomic is correct or up-to-date, or that the app will always be available. Use at your own risk. We are not liable for any loss or damage arising from use of the app.</p>
+  <p>PadelRank is provided "as is". We make no guarantee that:</p>
+  <ul>
+    <li>The app will always work without errors.</li>
+    <li>Data from Rankedin, FIP or Playtomic is correct or up-to-date.</li>
+    <li>The app will always be available.</li>
+    <li>Any post, comment, "I'm in" join or other Community content will remain available, accurate, or free of objectionable material.</li>
+  </ul>
+  <p>Use the app at your own risk. We are not liable for any loss, damage, missed match, or interpersonal dispute arising from use of the app or from interactions with other users via the Community feature.</p>
 
-  <h2>5. Your conduct</h2>
-  <p>You may not use the app for unlawful purposes, attempt to circumvent security mechanisms, use the app in a way that harms Rankedin, FIP, Playtomic or other users, or reverse engineer, decompile, or modify the app.</p>
+  <h2>5. Your conduct (whole app)</h2>
+  <p>You may not:</p>
+  <ul>
+    <li>Use the app for unlawful purposes.</li>
+    <li>Attempt to circumvent security mechanisms.</li>
+    <li>Use the app in a way that harms Rankedin, FIP, Playtomic, Supabase, Apple, Google or other users.</li>
+    <li>Reverse engineer, decompile, or modify the app.</li>
+  </ul>
 
-  <h2>6. Changes</h2>
-  <p>We may update these terms at any time. Material changes will be highlighted in the app. Continued use of the app after a change implies acceptance of the new terms.</p>
+  <h2>6. Community feature rules</h2>
+  <p>The "Find a match" Community is a place to organise informal padel matches in Denmark. By using it, you agree to the additional rules below.</p>
+
+  <h3>6.1 Eligibility</h3>
+  <ul>
+    <li>You must be <strong>at least 13 years old</strong> to create a Community account. Apple and Google sign-in flows enforce a minimum age at the operating-system level; we additionally require this in our terms.</li>
+    <li>You must be physically located in Denmark when you sign in. We perform a one-time location check at sign-in to verify this.</li>
+    <li>You must use a name that other users could reasonably use to recognise you in person at a club. We do not require your full legal name, but obvious impersonation is prohibited (see §6.2).</li>
+  </ul>
+
+  <h3>6.2 Content rules</h3>
+  <p>You agree not to post, comment, or otherwise submit content that:</p>
+  <ul>
+    <li>Is sexual, pornographic, or otherwise sexually explicit.</li>
+    <li>Contains hate speech, slurs, threats, harassment, or content targeting a person or group based on race, religion, gender, sexual orientation, disability or any other protected characteristic.</li>
+    <li>Constitutes bullying, doxxing, or stalking of another user.</li>
+    <li>Promotes violence or self-harm.</li>
+    <li>Is illegal under Danish or EU law (including but not limited to: defamation, incitement, illegal advertising, fraud, sale of regulated goods).</li>
+    <li>Impersonates another real person.</li>
+    <li>Is spam, repeated identical content, or bulk solicitation.</li>
+    <li>Contains links to external websites, contact details intended to drive traffic off-platform, or any form of commercial advertising. (The whole point of Community is to find a match — not to advertise rackets, lessons, betting sites, or anything else.)</li>
+    <li>Infringes anyone's intellectual-property rights.</li>
+    <li>Reveals another person's private information without their consent.</li>
+  </ul>
+  <p>The app enforces parts of these rules automatically (no external links, no obviously sexual language). The remainder is enforced by us, by you (via reporting — see §6.4) and by Apple's / Google's own platform rules.</p>
+
+  <h3>6.3 Limits and moderation rights</h3>
+  <ul>
+    <li>Each user may have at most <strong>5 active posts</strong> at any given time.</li>
+    <li>Posts automatically expire and are deleted <strong>7 days</strong> after creation.</li>
+    <li>We may remove any post, comment, or account at our sole discretion if we believe it violates these terms or otherwise harms users — without prior notice and without an obligation to refund anything (the app is free).</li>
+    <li>We may suspend or permanently terminate access to the Community feature for users who repeatedly or seriously violate these rules.</li>
+  </ul>
+
+  <h3>6.4 Reporting objectionable content and abusive users</h3>
+  <p>If you encounter a post, comment or user that violates §6.2 or otherwise concerns you, please contact us at <strong><a href="mailto:support@padelranks.app">support@padelranks.app</a></strong> with the post text and (if you can) the display name of the author. We aim to review reports within <strong>24 hours</strong> and to remove offending content promptly. You can also block individual users from the bell-icon settings sheet inside the app, which hides their posts and comments from your feed.</p>
+
+  <h3>6.5 Posts are user opinions, not ours</h3>
+  <p>Posts and comments are written by users. They do not represent PadelRank's views. We do not pre-screen all content. We are not responsible for what other users say, do, or follow through on. Meeting strangers from the internet to play padel is fundamentally a real-world interaction — exercise normal judgement, meet at a public club, and trust your instincts.</p>
+
+  <h3>6.6 Your licence to us</h3>
+  <p>By posting content via the Community feature, you grant PadelRank a <strong>non-exclusive, worldwide, royalty-free licence</strong> to host, store, display and distribute that content within the app for the purpose of operating the Community feature. This licence ends when the content is deleted (by you, by us, or via the 7-day auto-expire). You retain ownership of your content.</p>
+
+  <h3>6.7 Account deletion</h3>
+  <p>You can delete your Community account at any time from inside the app (Community → bell icon → "Delete account") or by emailing <a href="mailto:support@padelranks.app">support@padelranks.app</a>. Deletion removes your account record, posts, comments and "I'm in" joins from our database. Deletion is final.</p>
+
+  <h2>7. Age rating</h2>
+  <p>The app is rated <strong>12+</strong> on the App Store and equivalent on Google Play. The Community feature is restricted to users <strong>13 and older</strong> under §6.1. Parents and guardians are responsible for supervising any use of the app by minors.</p>
+
+  <h2>8. Changes</h2>
+  <p>We may modify these terms. We will announce material changes in the app before they take effect.</p>
+
+  <h2>9. Governing law</h2>
+  <p>These terms are governed by the laws of the Kingdom of Denmark. Disputes are settled in the Danish courts. Nothing in these terms limits any mandatory consumer-protection rights you have under your country of residence.</p>
+
+  <h2>10. Contact</h2>
+  <p><strong><a href="mailto:support@padelranks.app">support@padelranks.app</a></strong></p>
 
 </main>
-<footer>© 2026 PadelRanks</footer>
+
+<footer>
+  © 2026 PadelRank · <a href="mailto:support@padelranks.app">support@padelranks.app</a>
+</footer>
+
 </body>
 </html>
