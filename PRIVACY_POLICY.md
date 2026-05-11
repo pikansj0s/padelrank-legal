@@ -3,10 +3,12 @@
 **Effective date:** 11 May 2026
 **Provider:** PadelRank — Juliancilea@gmail.com
 
-PadelRank is an iOS and Android app that gives padel players access to national federation rankings, international pro rankings, tournaments, club information and a Danish "Find a Match" community. The app currently covers **18 countries**:
+PadelRank is an iOS and Android app that gives padel players access to national federation rankings, international pro rankings, tournaments, club information and a Danish "Find a Match" community. The app's federation-backed ranking and tournament data covers **18 countries**:
 
 - **Rankedin-backed (13):** Denmark, Sweden, Germany, Austria, Croatia, Norway, Romania, Slovenia, Moldova, Hungary, Finland, Ukraine, Estonia.
 - **FIP-backed (5):** Spain, Mexico, Argentina, Italy, France.
+
+In addition, an **optional Playtomic Liga mode** in the Tournaments tab lets you switch to amateur club-tournament listings from Playtomic, covering **60+ additional countries** (you toggle this manually from "Choose Liga"; the default is Rankedin/FIP).
 
 We take your privacy seriously and only process the data strictly required for the app to function.
 
@@ -62,8 +64,9 @@ Push delivery is fanned out via Expo's push service to Apple's APNs and Google's
 PadelRank communicates with the following services. When you use the app, requests are sent directly from your device — not through any server we operate, except for Supabase (see below).
 
 ### 3.1 Read-only data sources (rankings, tournaments, clubs)
-- **Rankedin** — national rankings, tournaments, player profiles and (optional) user login for the 13 Rankedin-backed countries. Public endpoints on `api.rankedin.com` and the Azure Front Door CDN that serves profile thumbnails (`rankedin-prod-cdn-adavg8d3dwfegkbd.z01.azurefd.net`). Rankedin privacy policy: https://www.rankedin.com/privacy
+- **Rankedin** — national rankings, tournaments and player profiles for the 13 Rankedin-backed countries. Public endpoints on `api.rankedin.com` and the Azure Front Door CDN that serves profile thumbnails (`rankedin-prod-cdn-adavg8d3dwfegkbd.z01.azurefd.net`). Rankedin privacy policy: https://www.rankedin.com/privacy
 - **FIP (Federación Internacional de Pádel)** — global pro rankings, international tournament calendar and player profile pages for Spain, Mexico, Argentina, Italy and France. Public WordPress REST API at `padelfip.com/wp-json/fip/v1/...` plus direct HTML scraping of public player pages at `padelfip.com/player/{slug}/`. FIP privacy policy: https://www.padelfip.com/privacy
+- **Playtomic** — amateur club-tournament discovery covering **60+ countries** worldwide. Used **only** when you opt in by switching the Tournaments tab to "Playtomic" mode from the "Choose Liga" picker. The app queries Playtomic's public `api.playtomic.io/v1/tournaments` endpoint with the coordinates you (optionally) provide for distance sorting — no account or identity is sent. Playtomic privacy policy: https://playtomic.io/privacy
 
 Profile photos specifically come from:
 - Rankedin's Azure Front Door CDN (`rankedin-prod-cdn-adavg8d3dwfegkbd.z01.azurefd.net/images/upload/player/{id}thumb.png`) for the 13 Rankedin-backed countries;

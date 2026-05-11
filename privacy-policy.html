@@ -186,12 +186,14 @@
     <div><strong>Provider:</strong> PadelRanks — <a href="mailto:Juliancilea@gmail.com">Juliancilea@gmail.com</a></div>
   </div>
 
-  <p>PadelRanks is an iOS and Android app that gives padel players access to national federation rankings, international pro rankings, tournaments, club information and a Danish "Find a Match" community. The app currently covers <strong>18 countries</strong>:</p>
+  <p>PadelRanks is an iOS and Android app that gives padel players access to national federation rankings, international pro rankings, tournaments, club information and a Danish "Find a Match" community. The app's federation-backed ranking and tournament data covers <strong>18 countries</strong>:</p>
 
   <div class="countries">
     <div><strong>Rankedin-backed (13):</strong><br/>Denmark, Sweden, Germany, Austria, Croatia, Norway, Romania, Slovenia, Moldova, Hungary, Finland, Ukraine, Estonia.</div>
     <div><strong>FIP-backed (5):</strong><br/>Spain, Mexico, Argentina, Italy, France.</div>
   </div>
+
+  <p>In addition, an <strong>optional Playtomic Liga mode</strong> in the Tournaments tab lets you switch to amateur club-tournament listings from Playtomic, covering <strong>60+ additional countries</strong> (you toggle this manually from "Choose Liga"; the default is Rankedin/FIP).</p>
 
   <p>We take your privacy seriously and only process the data strictly required for the app to function.</p>
 
@@ -250,8 +252,9 @@
 
   <h3>3.1 Read-only data sources (rankings, tournaments, clubs)</h3>
   <ul>
-    <li><strong>Rankedin</strong> — national rankings, tournaments, player profiles and (optional) user login for the 13 Rankedin-backed countries. Public endpoints on <code>api.rankedin.com</code>. Rankedin privacy policy: <a href="https://www.rankedin.com/privacy">rankedin.com/privacy</a></li>
+    <li><strong>Rankedin</strong> — national rankings, tournaments and player profiles for the 13 Rankedin-backed countries. Public endpoints on <code>api.rankedin.com</code>. Rankedin privacy policy: <a href="https://www.rankedin.com/privacy">rankedin.com/privacy</a></li>
     <li><strong>FIP (Federación Internacional de Pádel)</strong> — global pro rankings and international tournament calendar for Spain, Mexico, Argentina, Italy and France. Public WordPress REST API at <code>padelfip.com/wp-json/fip/v1/...</code>. FIP privacy policy: <a href="https://www.padelfip.com/privacy">padelfip.com/privacy</a></li>
+    <li><strong>Playtomic</strong> — amateur club-tournament discovery covering <strong>60+ countries</strong> worldwide. Used <strong>only</strong> when you opt in by switching the Tournaments tab to "Playtomic" mode from the "Choose Liga" picker. The app queries Playtomic's public <code>api.playtomic.io/v1/tournaments</code> endpoint with the coordinates you (optionally) provide for distance sorting — no account or identity is sent. Playtomic privacy policy: <a href="https://playtomic.io/privacy">playtomic.io/privacy</a></li>
   </ul>
 
   <h3>3.2 Backend / data processor (Find a Match feature only)</h3>
