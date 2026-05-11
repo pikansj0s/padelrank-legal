@@ -1,6 +1,6 @@
 # PadelRank — Terms of Service
 
-**Effective date:** 10 May 2026
+**Effective date:** 11 May 2026
 **Provider:** PadelRank — Juliancilea@gmail.com
 
 ## 1. Acceptance of terms

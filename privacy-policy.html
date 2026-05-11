@@ -171,7 +171,7 @@
 <header class="hero">
   <div class="hero-inner">
     <h1>PadelRanks — Privacy Policy</h1>
-    <p class="hero-sub">Effective 10 May 2026</p>
+    <p class="hero-sub">Effective 11 May 2026</p>
   </div>
 </header>
 
@@ -198,28 +198,19 @@
   <h2>1. Data we process</h2>
 
   <h3>1.1 Location data</h3>
-  <p>If you grant permission, PadelRanks uses your location <strong>on your device</strong> to calculate the distance between you and padel tournaments and clubs, and to verify that you are physically located in Denmark when you sign in to the Find a Match feature (see §1.6). Your location is never sent to our own servers as a stored record. Outgoing requests to third-party tournament providers (see §3) only include coordinates when you explicitly run a location-based search — and only as anonymous latitude/longitude, never your identity. If you deny the location permission, the rankings and tournament parts of the app still work — distance simply isn't shown — but the Find a Match feature is unavailable because we cannot confirm you are in Denmark.</p>
+  <p>If you grant permission, PadelRanks uses your location <strong>on your device</strong> to calculate the distance between you and padel tournaments and clubs, and to verify that you are physically located in Denmark when you sign in to the Find a Match feature (see §1.5). Your location is never sent to our own servers as a stored record. Outgoing requests to third-party tournament providers (see §3) only include coordinates when you explicitly run a location-based search — and only as anonymous latitude/longitude, never your identity. If you deny the location permission, the rankings and tournament parts of the app still work — distance simply isn't shown — but the Find a Match feature is unavailable because we cannot confirm you are in Denmark.</p>
 
-  <h3>1.2 Rankedin credentials (email + password)</h3>
-  <p>If you choose to log in with your rankedin.com account:</p>
-  <ul>
-    <li>Credentials are sent directly from your device to rankedin.com over encrypted HTTPS.</li>
-    <li>They are stored only in iOS Keychain / Android Keystore on your device (if you enable Face ID / fingerprint login).</li>
-    <li>We run no servers that receive your Rankedin credentials.</li>
-    <li>You can delete them at any time in the app's settings or by uninstalling the app.</li>
-  </ul>
-  <p>PadelRanks does not support logging in to FIP accounts — that back-end is used only for public read-only data.</p>
+  <h3>1.2 No federation login</h3>
+  <p>The rankings, tournament and club parts of PadelRanks are entirely read-only and require no Rankedin or FIP account. You can browse all 18 countries without signing in to anything. We do not store federation credentials and there is no login form for Rankedin or FIP in the app.</p>
+  <p>You can optionally "claim" your own player profile by searching for your name in the Rankedin or FIP public player database — this selection is stored only on your device and contains no credentials.</p>
 
   <h3>1.3 Third-party API data (rankings, tournaments, clubs, profiles)</h3>
   <p>The app fetches data from the public APIs listed in §3 to display rankings, tournament results and club information. This data is stored only temporarily in the app's on-device cache (AsyncStorage) to make the app faster; it is never forwarded anywhere.</p>
 
-  <h3>1.4 Profile picture (optional)</h3>
-  <p>If you choose to add a profile picture from your camera or photo library, it is stored only locally on your device. The Find a Match feature uses initials-based avatars — your local photo is never uploaded to the Find a Match backend.</p>
-
-  <h3>1.5 Player profile photos displayed in the app</h3>
+  <h3>1.4 Player profile photos displayed in the app</h3>
   <p>Profile photos of other players shown in rankings and profile screens are sourced from the public APIs of Rankedin and the International Padel Federation (FIP) — they are not hosted by us. <strong>Photo availability varies by player and by country;</strong> where a photo is not available we display a generated avatar with the player's initials. The image URLs themselves are requested directly from the third-party CDN by your device and are cached on-device for performance. No personal identifier is attached to those requests.</p>
 
-  <h3>1.6 Find a Match account and content (Apple / Google sign-in, posts, comments)</h3>
+  <h3>1.5 Find a Match account and content (Apple / Google sign-in, posts, comments)</h3>
   <p>The "Find a Match" feature requires you to sign in with Apple or Google. When you do, PadelRanks receives and stores the following on our backend (Supabase — see §3):</p>
   <ul>
     <li>A <strong>Supabase user id</strong> (random UUID) — used to identify your account.</li>
@@ -233,7 +224,7 @@
   <p>We do <strong>not</strong> receive or store your Apple or Google password — the sign-in itself happens on Apple's / Google's servers, and we only receive the resulting identity token.</p>
   <p>The Find a Match feature is currently restricted to users physically located in Denmark.</p>
 
-  <h3>1.7 Push notifications (optional)</h3>
+  <h3>1.6 Push notifications (optional)</h3>
   <p>If you opt in to notifications, we collect:</p>
   <ul>
     <li>An <strong>Expo push token</strong> — an opaque per-device identifier issued by Expo's push service. We store it in our Supabase backend together with your current notification preferences (mode, postal code, level window) so the server can deliver notifications when the app is closed.</li>
