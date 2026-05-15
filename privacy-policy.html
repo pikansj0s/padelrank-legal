@@ -171,7 +171,7 @@
 <header class="hero">
   <div class="hero-inner">
     <h1>PadelRanks — Privacy Policy</h1>
-    <p class="hero-sub">Effective 11 May 2026</p>
+    <p class="hero-sub">Effective 15 May 2026</p>
   </div>
 </header>
 
@@ -186,12 +186,16 @@
     <div><strong>Provider:</strong> PadelRanks — <a href="mailto:Juliancilea@gmail.com">Juliancilea@gmail.com</a></div>
   </div>
 
+  <p style="background: #FEF3C7; border-left: 4px solid #D97706; padding: 12px 16px; margin: 16px 0; font-size: 0.95rem;"><strong>Draft notice (2026-05-15):</strong> Sections 1.7 (legal basis), 5 (rights, with article references) and 6 (children) have been updated to add explicit GDPR-article citations and to formally identify the Dansk Padel Forbund (DPF) and Crionet/matchscorerlive.com as data sources / sub-processors. This update was prepared by a technical reviewer and <strong>has not yet been reviewed by legal counsel.</strong> A pass by a Danish data-protection lawyer is recommended before this revision is treated as authoritative.</p>
+
   <p>PadelRanks is an iOS and Android app that gives padel players access to national federation rankings, international pro rankings, tournaments, club information and a Danish "Find a Match" community. The app's federation-backed ranking and tournament data covers <strong>18 countries</strong>:</p>
 
   <div class="countries">
     <div><strong>Rankedin-backed (13):</strong><br/>Denmark, Sweden, Germany, Austria, Croatia, Norway, Romania, Slovenia, Moldova, Hungary, Finland, Ukraine, Estonia.</div>
     <div><strong>FIP-backed (5):</strong><br/>Spain, Mexico, Argentina, Italy, France.</div>
   </div>
+
+  <p>For Denmark specifically, the underlying ranking data is owned and maintained by the <strong>Dansk Padel Forbund (DPF)</strong> — the Danish Padel Federation — and hosted on the Rankedin platform. We access this data through Rankedin's public API but the data controller for the ranking records themselves is DPF, not Rankedin or us.</p>
 
   <p>In addition, an <strong>optional Playtomic Liga mode</strong> in the Tournaments tab lets you switch to amateur club-tournament listings from Playtomic, covering <strong>60+ additional countries</strong> (you toggle this manually from "Choose Liga"; the default is Rankedin/FIP).</p>
 
@@ -234,6 +238,17 @@
   </ul>
   <p>Push delivery is fanned out via Expo's push service to Apple's APNs and Google's FCM. Expo doesn't see the message content beyond what we send (notification title + body). We don't share the push token with anyone else.</p>
 
+  <h3>1.7 Legal basis for processing (GDPR Article 6)</h3>
+  <p>The lawful bases under GDPR Article 6(1) that we rely on are:</p>
+  <ul>
+    <li><strong>Federation rankings, tournament results and public player profiles</strong> — Article 6(1)(f) <strong>legitimate interests.</strong> Our legitimate interest is to make padel rankings, tournament results and federation-published player profiles searchable in a single mobile app for the Danish and international padel community. We have weighed this interest against the rights of the data subjects: the source data is already published by the national federations (DPF, FIP) and their hosting platforms (Rankedin, padelfip.com) on publicly accessible web pages; players who register with these federations are informed by the federations that their rankings will be public; and the data we surface is limited to what those federations themselves display. You can object to this processing at any time by writing to the contact email below — see §5 (Right to object / erasure).</li>
+    <li><strong>Find a Match account, posts, comments and "I'm in" joins</strong> — Article 6(1)(b) <strong>performance of a contract.</strong> When you sign in via Apple or Google to use Find a Match, you create an account with us and we process your account record, your posts and your interactions in order to provide that service to you.</li>
+    <li><strong>Push notifications</strong> — Article 6(1)(a) <strong>consent.</strong> Push delivery only happens after you have explicitly opted in via the in-app notification settings. You can withdraw this consent at any time by switching off notifications.</li>
+    <li><strong>Location-based distance / Denmark presence check</strong> — Article 6(1)(a) <strong>consent.</strong> Location is only accessed after you have granted the OS-level permission. The Denmark presence check at Find a Match sign-in stores only the boolean result, never your coordinates.</li>
+    <li><strong>Security, abuse-prevention and account-deletion auditing</strong> — Article 6(1)(f) <strong>legitimate interests</strong> (preventing abuse of the Find a Match feature, retaining minimal logs to respond to deletion requests).</li>
+  </ul>
+  <p>A documented legitimate-interest balancing test is available on request to <a href="mailto:Juliancilea@gmail.com">Juliancilea@gmail.com</a>.</p>
+
   <h2>2. Data we do <em>not</em> collect</h2>
 
   <div class="no-collect">
@@ -252,8 +267,10 @@
 
   <h3>3.1 Read-only data sources (rankings, tournaments, clubs)</h3>
   <ul>
-    <li><strong>Rankedin</strong> — national rankings, tournaments and player profiles for the 13 Rankedin-backed countries. Public endpoints on <code>api.rankedin.com</code>. Rankedin privacy policy: <a href="https://www.rankedin.com/privacy">rankedin.com/privacy</a></li>
-    <li><strong>FIP (Federación Internacional de Pádel)</strong> — global pro rankings and international tournament calendar for Spain, Mexico, Argentina, Italy and France. Public WordPress REST API at <code>padelfip.com/wp-json/fip/v1/...</code>. FIP privacy policy: <a href="https://www.padelfip.com/privacy">padelfip.com/privacy</a></li>
+    <li><strong>Dansk Padel Forbund (DPF)</strong> — the Danish Padel Federation. DPF is the <strong>controller</strong> of the Danish ranking records, tournament results and player registrations we display for Denmark. The data is published by DPF on the Rankedin platform (see next bullet). DPF website: <a href="https://dansk-padel.dk">dansk-padel.dk</a></li>
+    <li><strong>Rankedin</strong> — Rankedin is DPF's technology provider and also hosts national rankings, tournaments and player profiles for the other 12 Rankedin-backed countries listed in the introduction. We read via the public endpoints on <code>api.rankedin.com</code>. Rankedin privacy policy: <a href="https://www.rankedin.com/privacy">rankedin.com/privacy</a></li>
+    <li><strong>FIP (Federación Internacional de Pádel)</strong> — global pro rankings and international tournament calendar for Spain, Mexico, Argentina, Italy and France. FIP is the <strong>controller</strong> of these records. Public WordPress REST API at <code>padelfip.com/wp-json/fip/v1/...</code>. FIP privacy policy: <a href="https://www.padelfip.com/privacy">padelfip.com/privacy</a></li>
+    <li><strong>Crionet S.p.A. (matchscorerlive.com)</strong> — FIP's live-score widget provider. Used only to display in-progress match scores during FIP tournaments. Requests are anonymous GETs against public widget URLs; no user data leaves your device. Operator: Crionet S.p.A. (Italy).</li>
     <li><strong>Playtomic</strong> — amateur club-tournament discovery covering <strong>60+ countries</strong> worldwide. Used <strong>only</strong> when you opt in by switching the Tournaments tab to "Playtomic" mode from the "Choose Liga" picker. The app queries Playtomic's public <code>api.playtomic.io/v1/tournaments</code> endpoint with the coordinates you (optionally) provide for distance sorting — no account or identity is sent. Playtomic privacy policy: <a href="https://playtomic.io/privacy">playtomic.io/privacy</a></li>
   </ul>
 
@@ -277,26 +294,31 @@
 
   <h2>5. Your rights (GDPR + UK GDPR + Swiss DPA)</h2>
 
-  <p>You have the right to:</p>
+  <p>You have the following rights under the GDPR. Article references are to the EU GDPR; equivalent rights exist under the UK GDPR and Swiss DPA.</p>
   <ul>
-    <li><strong>Access</strong> — for the on-device parts of the app, all your data lives on your device. For the Find a Match feature, write to <a href="mailto:Juliancilea@gmail.com">Juliancilea@gmail.com</a> and we will provide a copy of the data associated with your account.</li>
-    <li><strong>Rectification</strong> — you can edit your display name and postal code in the app at any time.</li>
-    <li><strong>Deletion</strong> —
+    <li><strong>Access</strong> — Article 15. For the on-device parts of the app, all your data lives on your device. For the Find a Match feature, write to <a href="mailto:Juliancilea@gmail.com">Juliancilea@gmail.com</a> and we will provide a copy of the data associated with your account.</li>
+    <li><strong>Rectification</strong> — Article 16. You can edit your display name and postal code in the app at any time.</li>
+    <li><strong>Erasure ("right to be forgotten")</strong> — Article 17.
       <ul>
-        <li>On-device data: uninstall the app and all local data is wiped.</li>
-        <li>Find a Match account and content: you can delete your account and all posts/comments inside the app (Find a Match → bell icon → "Delete account"), or by writing to <a href="mailto:Juliancilea@gmail.com">Juliancilea@gmail.com</a>. Deletion is final — your user record, posts, comments, "I'm in" joins and push subscription are removed from Supabase.</li>
+        <li><strong>On-device data:</strong> uninstall the app and all local data is wiped.</li>
+        <li><strong>Find a Match account and content:</strong> you can delete your account and all posts/comments inside the app (Find a Match → bell icon → "Delete account"), or by writing to <a href="mailto:Juliancilea@gmail.com">Juliancilea@gmail.com</a>. Deletion is final — your Find a Match user record, posts, comments, "I'm in" joins and push subscription are removed from Supabase, as is the corresponding entry in <code>auth.audit_log_entries</code>.</li>
+        <li><strong>Removal of your public player profile:</strong> PadelRanks displays read-only data published by the federations themselves (DPF / Rankedin / FIP / Playtomic). We do not store or republish that data — we fetch it live from their public APIs. To have your player profile removed from PadelRanks you must request deletion at the source: contact Rankedin (<a href="mailto:info@rankedin.no">info@rankedin.no</a>) or your national federation directly. Once the federation deletes your record, PadelRanks stops returning it on the next data refresh (≤ 7 days depending on the cached endpoint, or immediately on pull-to-refresh).</li>
       </ul>
     </li>
-    <li><strong>Portability</strong> — you can export your Rankedin data directly from rankedin.com. For Find a Match data, write to <a href="mailto:Juliancilea@gmail.com">Juliancilea@gmail.com</a> for a JSON export.</li>
-    <li><strong>Withdraw consent</strong> — you can sign out of the Find a Match feature at any time from the bell-icon settings sheet. You can also revoke Apple / Google's authorisation in your Apple ID / Google Account settings.</li>
-    <li><strong>Complaint</strong> — you can file a complaint with your national Data Protection Authority (e.g. Datatilsynet in Denmark, IMY in Sweden, BfDI in Germany, DSB in Austria, AEPD in Spain, Garante in Italy, CNIL in France, ICO in the UK) if you believe your rights have been infringed.</li>
+    <li><strong>Restriction</strong> — Article 18. You can ask us to restrict processing of your Find a Match account while a dispute is investigated.</li>
+    <li><strong>Portability</strong> — Article 20. You can export your Rankedin data directly from rankedin.com. For Find a Match data, write to <a href="mailto:Juliancilea@gmail.com">Juliancilea@gmail.com</a> for a JSON export.</li>
+    <li><strong>Object</strong> — Article 21. You can object at any time to our processing of your data on the basis of legitimate interests (§1.7). For PadelRanks-side processing (your Find a Match account), write to <a href="mailto:Juliancilea@gmail.com">Juliancilea@gmail.com</a>. For federation-published data we surface, see the "Removal of your public player profile" point above — the federations are the source controllers.</li>
+    <li><strong>Withdraw consent</strong> — Article 7(3). You can sign out of the Find a Match feature at any time from the bell-icon settings sheet. You can also revoke Apple / Google's authorisation in your Apple ID / Google Account settings. Switching off notifications in-app revokes your push consent.</li>
+    <li><strong>Complaint</strong> — Article 77. You can file a complaint with your national Data Protection Authority (e.g. Datatilsynet in Denmark, IMY in Sweden, BfDI in Germany, DSB in Austria, AEPD in Spain, Garante in Italy, CNIL in France, ICO in the UK) if you believe your rights have been infringed.</li>
   </ul>
 
-  <h2>6. Children</h2>
+  <h2>6. Children (GDPR Article 8)</h2>
 
-  <p>PadelRanks's Find a Match feature is <strong>not directed at and may not be used by children under the age of 13</strong>. Apple and Google sign-in flows enforce minimum age requirements at the operating-system level. We do not knowingly collect data from children under 13. If you believe a child under 13 has created a Find a Match account, please contact us at <a href="mailto:Juliancilea@gmail.com">Juliancilea@gmail.com</a> and we will delete the account and associated content.</p>
+  <p>PadelRanks's <strong>Find a Match</strong> feature is <strong>not directed at and may not be used by children under the age of 16</strong>. At Find a Match sign-up we require an explicit in-app confirmation that the user is 16 years of age or older. This is higher than the Danish digital-consent age of 13 (GDPR Article 8(1)) and is set deliberately to avoid processing the personal data of younger users without parental consent. Apple's and Google's sign-in flows additionally enforce platform-level minimum age requirements.</p>
 
-  <p>The non-Find-a-Match parts of the app (rankings, tournaments, clubs) do not collect any personal data from any user, of any age.</p>
+  <p>We do not knowingly collect data from children under 16 via Find a Match. If you believe a child under 16 has created a Find a Match account, please contact us at <a href="mailto:Juliancilea@gmail.com">Juliancilea@gmail.com</a> and we will delete the account and associated content.</p>
+
+  <p>The <strong>non-Find-a-Match parts</strong> of the app (rankings, tournaments, clubs) do not collect any personal data from any user, of any age — they are a read-only display of data already published by the national padel federations (DPF, FIP, etc.) on their own public web pages. The federations are the controllers of that data and are responsible for any age-related publication decisions about their members.</p>
 
   <h2>7. Security</h2>
 
