@@ -3,8 +3,6 @@
 **Effective date:** 15 May 2026
 **Provider:** PadelRank — Juliancilea@gmail.com
 
-> **Draft notice (2026-05-15):** Sections 1.7 (legal basis), 5 (rights, with article references) and 6 (children) have been updated to add explicit GDPR-article citations and to formally identify the Dansk Padel Forbund (DPF) and Crionet/matchscorerlive.com as data sources / sub-processors. This update was prepared by a technical reviewer and **has not yet been reviewed by legal counsel.** A pass by a Danish data-protection lawyer is recommended before this revision is treated as authoritative.
-
 PadelRank is an iOS and Android app that gives padel players access to national federation rankings, international pro rankings, tournaments, club information and a Danish "Find a Match" community. The app's federation-backed ranking and tournament data covers **18 countries**:
 
 - **Rankedin-backed (13):** Denmark, Sweden, Germany, Austria, Croatia, Norway, Romania, Slovenia, Moldova, Hungary, Finland, Ukraine, Estonia.
