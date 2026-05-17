@@ -1,6 +1,6 @@
 # PadelRank — Privacy Policy
 
-**Effective date:** 15 May 2026
+**Effective date:** 17 May 2026
 **Provider:** PadelRank — Juliancilea@gmail.com
 
 PadelRank is an iOS and Android app that gives padel players access to national federation rankings, international pro rankings, tournaments, club information and a Danish "Find a Match" community. The app's federation-backed ranking and tournament data covers **18 countries**:
@@ -53,7 +53,20 @@ If you opt in to notifications, we collect:
 
 Push delivery is fanned out via Expo's push service to Apple's APNs and Google's FCM. Expo doesn't see the message content beyond what we send (notification title + body). We don't share the push token with anyone else.
 
-### 1.7 Legal basis for processing (GDPR Article 6)
+### 1.7 Follower counts (anonymous)
+PadelRanks shows a small follower count next to each player in the rankings, search results, player profile and "Following" list — a number indicating how many other PadelRanks users follow that player. To compute this count we store one row per follow on our backend (Supabase — see §3) with:
+
+- The **player id** being followed (an opaque identifier from the federation: Rankedin or FIP).
+- An **anonymous device identifier** — a random UUID v4 generated on your device on first launch and persisted locally. It is **not derived from your name, email, Apple ID, Google ID, location, IP address or any other personal information**. It exists only so the same device cannot inflate a player's count and so you can unfollow later.
+- A **timestamp** of when the follow was created.
+
+The anonymous device identifier is **never returned to any client** — only the aggregate count (e.g. "134 followers") is visible to other users, and is the only value the server's public API ever emits. Row-level security blocks any direct read of the underlying table.
+
+If you uninstall and reinstall the app your device receives a new anonymous identifier; your previous follows orphan in the database and continue to contribute to counts until removed (see §5 Erasure).
+
+The follower-count feature works for both Rankedin- and FIP-backed players across all 18 countries and does not require sign-in.
+
+### 1.8 Legal basis for processing (GDPR Article 6)
 
 The lawful bases under GDPR Article 6(1) that we rely on are:
 
@@ -61,6 +74,7 @@ The lawful bases under GDPR Article 6(1) that we rely on are:
 - **Find a Match account, posts, comments and "I'm in" joins** — Article 6(1)(b) **performance of a contract.** When you sign in via Apple or Google to use Find a Match, you create an account with us and we process your account record, your posts and your interactions in order to provide that service to you.
 - **Push notifications** — Article 6(1)(a) **consent.** Push delivery only happens after you have explicitly opted in via the in-app notification settings. You can withdraw this consent at any time by switching off notifications.
 - **Location-based distance / Denmark presence check** — Article 6(1)(a) **consent.** Location is only accessed after you have granted the OS-level permission. The Denmark presence check at Find a Match sign-in stores only the boolean result, never your coordinates.
+- **Follower counts (anonymous)** — Article 6(1)(f) **legitimate interests.** Our legitimate interest is to give padel players a lightweight social signal (how many other users in the community follow each player) — a feature widely expected in modern sports apps. We have weighed this interest against the rights of the data subjects: the device identifier is anonymous and not derivable from any PII; the underlying table is invisible to clients (only aggregate counts are exposed, via a SECURITY DEFINER RPC); follow events do not target identified natural persons (they reference public federation player IDs that we do not own); and you can request deletion of your device's follow records at any time — see §5.
 - **Security, abuse-prevention and account-deletion auditing** — Article 6(1)(f) **legitimate interests** (preventing abuse of the Find a Match feature, retaining minimal logs to respond to deletion requests).
 
 A documented legitimate-interest balancing test is available on request to **Juliancilea@gmail.com**.
@@ -89,7 +103,7 @@ Profile photos specifically come from:
 - FIP's WordPress Media library (`padelfip.com/wp-content/uploads/...`) for the 5 FIP-backed countries.
 
 ### 3.2 Backend / data processor (Find a Match feature only)
-- **Supabase** (Supabase Inc., hosted in Frankfurt, Germany — EU region) acts as our **data processor** for the Find a Match feature. Supabase stores your account record, posts, comments, "I'm in" joins and push subscription inside a Postgres database hosted in the EU and is contractually bound by GDPR-compliant data-processing terms. Supabase privacy policy: https://supabase.com/privacy
+- **Supabase** (Supabase Inc., hosted in Frankfurt, Germany — EU region) acts as our **data processor** for the Find a Match feature **and for anonymous follower-count tracking (§1.7)**. Supabase stores your account record, posts, comments, "I'm in" joins, push subscription and the anonymous follow rows inside a Postgres database hosted in the EU and is contractually bound by GDPR-compliant data-processing terms. Supabase privacy policy: https://supabase.com/privacy
 - **Apple Sign-In** (Apple Inc.) — only used for authentication. Apple's privacy policy: https://www.apple.com/legal/privacy/
 - **Google Sign-In** (Google LLC) — only used for authentication. Google's privacy policy: https://policies.google.com/privacy
 - **Expo Push Service** (650 Industries, Inc.) — delivers push notifications to APNs / FCM on our behalf. Expo privacy policy: https://expo.dev/privacy
@@ -103,6 +117,7 @@ No crash reporting, analytics or telemetry SDK is currently integrated into the 
 - **On-device cache** (rankings, tournaments, clubs, photos): cleared on uninstall, or whenever the app's normal cache-eviction logic decides. You can also clear it by reinstalling.
 - **Find a Match posts and comments**: each post automatically expires **7 days** after it is created and is deleted from the database. Comments and "I'm in" joins on a post are deleted together with the post.
 - **Find a Match account record** (display name, postal code, user id, email, push token): retained until you delete your account (see §5).
+- **Follower-tracking rows** (anonymous device id + player id + timestamp): retained indefinitely so global follower counts remain stable across sessions. You can request deletion of your device's follow records — see §5 (Erasure).
 
 ## 5. Your rights (GDPR + UK GDPR + Swiss DPA)
 
@@ -114,9 +129,10 @@ You have the following rights under the GDPR. Article references are to the EU G
   - **On-device data:** uninstall the app and all local data is wiped.
   - **Find a Match account and content:** you can delete your account and all posts/comments inside the app (Find a Match → bell icon → "Delete account"), or by writing to Juliancilea@gmail.com. Deletion is final — your Find a Match user record, posts, comments, "I'm in" joins and push subscription are removed from Supabase, as is the corresponding entry in `auth.audit_log_entries`.
   - **Removal of your public player profile:** PadelRanks displays read-only data published by the federations themselves (DPF / Rankedin / FIP / Playtomic). We do not store or republish that data — we fetch it live from their public APIs. To have your player profile removed from PadelRanks you must request deletion at the source: contact Rankedin (`info@rankedin.no`) or your national federation directly. Once the federation deletes your record, PadelRanks stops returning it on the next data refresh (≤ 7 days depending on the cached endpoint, or immediately on pull-to-refresh).
+  - **Anonymous follower records (§1.7):** because the device identifier is not tied to any personal account, the in-app path is to unfollow individual players (each unfollow removes the corresponding row immediately). To delete ALL follow records originating from your device, write to **Juliancilea@gmail.com** and include your anonymous device id from Settings → Privacy → "Your anonymous device id". We will delete the matching rows from Supabase within 30 days of receipt.
 - **Restriction** — Article 18. You can ask us to restrict processing of your Find a Match account while a dispute is investigated.
 - **Portability** — Article 20. You can export your Rankedin data directly from rankedin.com. For Find a Match data, write to Juliancilea@gmail.com for a JSON export.
-- **Object** — Article 21. You can object at any time to our processing of your data on the basis of legitimate interests (§1.7). For PadelRanks-side processing (your Find a Match account), write to Juliancilea@gmail.com. For federation-published data we surface, see the "Removal of your public player profile" point above — the federations are the source controllers.
+- **Object** — Article 21. You can object at any time to our processing of your data on the basis of legitimate interests (§1.8). For PadelRanks-side processing (your Find a Match account or anonymous follower-tracking rows), write to Juliancilea@gmail.com. For federation-published data we surface, see the "Removal of your public player profile" point above — the federations are the source controllers.
 - **Withdraw consent** — Article 7(3). You can sign out of the Find a Match feature at any time from the bell-icon settings sheet. You can also revoke Apple / Google's authorisation in your Apple ID / Google Account settings. Switching off notifications in-app revokes your push consent.
 - **Complaint** — Article 77. You can file a complaint with your national Data Protection Authority (e.g. Datatilsynet in Denmark, IMY in Sweden, BfDI in Germany, DSB in Austria, AEPD in Spain, Garante in Italy, CNIL in France, ICO in the UK) if you believe your rights have been infringed.
 
@@ -130,7 +146,7 @@ The **non-Find-a-Match parts** of the app (rankings, tournaments, clubs) do not 
 
 ## 7. Security
 
-Communication with all third-party APIs and with Supabase is encrypted with TLS. Find a Match data inside Supabase is protected by row-level security (RLS) — you can only read and write your own posts, comments, joins and push subscriptions, and the database refuses any operation that violates this. We rely on Supabase's underlying security measures (encryption at rest, secure key management, regular backups) for the database itself.
+Communication with all third-party APIs and with Supabase is encrypted with TLS. Find a Match data inside Supabase is protected by row-level security (RLS) — you can only read and write your own posts, comments, joins and push subscriptions, and the database refuses any operation that violates this. Follower-tracking rows (§1.7) are protected by the same row-level security mechanism — the underlying table is fully blocked from direct client reads, and only the aggregate count is exposed via a SECURITY DEFINER RPC, so no client (including signed-in users) can enumerate which devices follow which players. We rely on Supabase's underlying security measures (encryption at rest, secure key management, regular backups) for the database itself.
 
 ## 8. International transfers
 
