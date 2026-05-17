@@ -1,6 +1,6 @@
 # PadelRank — Terms of Service
 
-**Effective date:** 11 May 2026
+**Effective date:** 17 May 2026
 **Provider:** PadelRank — Juliancilea@gmail.com
 
 ## 1. Acceptance of terms
@@ -46,7 +46,7 @@ You may not:
 "Find a Match" is a place to organise informal padel matches in Denmark. By using it, you agree to the additional rules below.
 
 ### 6.1 Eligibility
-- You must be **at least 13 years old** to create a Find a Match account. Apple and Google sign-in flows enforce a minimum age at the operating-system level; we additionally require this in our terms.
+- You must be **at least 16 years old** to create a Find a Match account. The app shows an in-app age confirmation at sign-in that you must explicitly tick before Apple or Google authentication proceeds. This is higher than the Danish digital-consent age of 13 (GDPR Article 8(1)) and is set deliberately to avoid processing the personal data of younger users without parental consent. Apple's and Google's sign-in flows additionally enforce platform-level minimum age requirements.
 - You must be physically located in Denmark when you sign in. We perform a one-time location check at sign-in to verify this.
 - You must use a name that other users could reasonably use to recognise you in person at a club. We do not require your full legal name, but obvious impersonation is prohibited (see §6.2).
 
@@ -85,7 +85,7 @@ You can delete your Find a Match account at any time from inside the app (Find a
 
 ## 7. Age rating
 
-The app is rated **12+** on the App Store and equivalent on Google Play. The Find a Match feature is restricted to users **13 and older** under §6.1. Parents and guardians are responsible for supervising any use of the app by minors.
+PadelRanks itself contains no objectionable content (the rankings, tournament and club parts are a read-only display of public federation data). The **Find a Match social feature** is, however, restricted by our terms to users **16 and older** — see §6.1 for the in-app age confirmation that gates Apple / Google sign-in. Parents and guardians are responsible for supervising any use of the app by minors, and we encourage anyone signing in for a minor to read §6.1 first.
 
 ## 8. Changes
 
