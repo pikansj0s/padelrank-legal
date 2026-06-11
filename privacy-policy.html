@@ -171,7 +171,7 @@
 <header class="hero">
   <div class="hero-inner">
     <h1>PadelRanks — Privacy Policy</h1>
-    <p class="hero-sub">Effective 7 June 2026</p>
+    <p class="hero-sub">Effective 11 June 2026</p>
   </div>
 </header>
 
@@ -191,6 +191,7 @@
   <div class="countries">
     <div><strong>Rankedin-backed (13):</strong><br/>Denmark, Sweden, Germany, Austria, Croatia, Norway, Romania, Slovenia, Moldova, Hungary, Finland, Ukraine, Estonia.</div>
     <div><strong>FIP-backed (5):</strong><br/>Spain, Mexico, Argentina, Italy, France.</div>
+    <div><strong>Playtomic tournament catalogue (60+ further countries):</strong><br/>optional tournament listings only, fetched directly from Playtomic — see §3.1.</div>
   </div>
 
   <p>For Denmark specifically, the underlying ranking data is owned and maintained by the <strong>Dansk Padel Forbund (DPF)</strong> — the Danish Padel Federation — and hosted on the Rankedin platform. We access this data through Rankedin's public API but the data controller for the ranking records themselves is DPF, not Rankedin or us.</p>
@@ -200,7 +201,7 @@
   <h2>1. Data we process</h2>
 
   <h3>1.1 Location data</h3>
-  <p>If you grant permission, PadelRanks uses your location <strong>on your device</strong> to calculate the distance between you and padel tournaments and clubs, and to verify that you are physically located in Denmark when you sign in to the Find a Match feature (see §1.5). Your location is never sent to our own servers as a stored record. Outgoing requests to third-party tournament providers (see §3) only include coordinates when you explicitly run a location-based search — and only as anonymous latitude/longitude, never your identity. If you deny the location permission, the rankings and tournament parts of the app still work — distance simply isn't shown — but the Find a Match feature is unavailable because we cannot confirm you are in Denmark.</p>
+  <p>If you grant permission, PadelRanks uses your location <strong>on your device</strong> to calculate the distance between you and padel tournaments and clubs, and to verify that you are physically located in Denmark when you sign in to the Find a Match feature (see §1.5). Your location is never sent to our own servers as a stored record. Outgoing requests to third-party tournament providers (see §3) only include your coordinates when you explicitly run a location-based search — and only as anonymous latitude/longitude, never your identity. (Playtomic tournament requests use fixed, app-defined city coordinates — not your location; see §3.1.) If you deny the location permission, the rankings and tournament parts of the app still work — distance simply isn't shown — but the Find a Match feature is unavailable because we cannot confirm you are in Denmark.</p>
 
   <h3>1.2 No federation login</h3>
   <p>The rankings, tournament and club parts of PadelRanks are entirely read-only and require no Rankedin or FIP account. You can browse all 18 countries without signing in to anything. We do not store federation credentials and there is no login form for Rankedin or FIP in the app.</p>
@@ -271,13 +272,14 @@
 
   <h2>3. Third-party data sources and processors</h2>
 
-  <p>PadelRanks communicates with the following services. Most read-only padel data is fetched through <strong>our own backend</strong> (<code>api.padelranks.online</code>, hosted on Hetzner in the EU), which retrieves it from the sources below, caches it, and serves it to the app — this covers RankedIn (rankings, team leagues, player profiles, player matches and tournaments), FIP (the Premier calendar and player rankings), and place-name geocoding. A few requests still go directly from your device to the source — for example RankedIn team-league search and certain FIP player-search / player-profile pages. The Find a Match feature uses Supabase (§3.2).</p>
+  <p>PadelRanks communicates with the following services. Most read-only padel data is fetched through <strong>our own backend</strong> (<code>api.padelranks.online</code>, hosted on Hetzner in the EU), which retrieves it from the sources below, caches it, and serves it to the app — this covers RankedIn (rankings, team leagues, player profiles, player matches and tournaments), FIP (the Premier calendar and player rankings), and place-name geocoding. A few requests still go directly from your device to the source — for example RankedIn team-league search, certain FIP player-search / player-profile pages, and all Playtomic tournament requests (§3.1). The Find a Match feature uses Supabase (§3.2).</p>
 
   <h3>3.1 Read-only data sources (rankings, tournaments, clubs)</h3>
   <ul>
     <li><strong>Dansk Padel Forbund (DPF)</strong> — the Danish Padel Federation. DPF is the <strong>controller</strong> of the Danish ranking records, tournament results and player registrations we display for Denmark. The data is published by DPF on the Rankedin platform (see next bullet). DPF website: <a href="https://dansk-padel.dk">dansk-padel.dk</a></li>
     <li><strong>Rankedin</strong> — Rankedin is DPF's technology provider and also hosts national rankings, tournaments and player profiles for the other 12 Rankedin-backed countries listed in the introduction. We read Rankedin's public endpoints on <code>api.rankedin.com</code> mainly <strong>through our backend</strong>, which caches the responses (see §3.2); a few calls, such as team-league search, are still made directly from your device. Rankedin privacy policy: <a href="https://www.rankedin.com/privacy">rankedin.com/privacy</a></li>
     <li><strong>FIP (Federación Internacional de Pádel)</strong> — global pro rankings, international tournament calendar and player profile pages for Spain, Mexico, Argentina, Italy and France. FIP is the <strong>controller</strong> of these records. FIP <strong>player rankings and the FIP Premier calendar are fetched through our backend</strong> (refreshed roughly every 6 hours; see §3.2). Some FIP pages are still read <strong>directly by your device</strong>: FIP's public WordPress REST API at <code>padelfip.com/wp-json/fip/v1/...</code> (including the <code>circuit-stats</code> endpoint that exposes recent finals per player), FIP player search, and lightweight HTML scraping of FIP's public player-profile pages at <code>padelfip.com/player/{slug}/</code> for fields that aren't exposed by the REST API. We only read endpoints that are publicly accessible without authentication. FIP privacy policy: <a href="https://www.padelfip.com/privacy">padelfip.com/privacy</a></li>
+    <li><strong>Playtomic</strong> — an optional tournament catalogue covering 60+ further countries (for example Spain, Italy, France, the Netherlands, the United States, Mexico and Brazil). When you switch the tournament feed to the Playtomic catalogue, your device requests publicly listed tournaments <strong>directly from Playtomic's public API</strong> (<code>api.playtomic.io</code>). These requests contain only fixed, app-defined city coordinates for the country you picked — <strong>never your own location, your identity or any account data</strong> — and nothing about you is stored with Playtomic by us. Playtomic privacy policy: <a href="https://playtomic.com/privacy-policy">playtomic.com/privacy-policy</a></li>
     <li><strong>OpenStreetMap / Nominatim</strong> — used by our backend for <strong>forward-geocoding</strong> of place names into map coordinates, so the app can show the distance to a club or tournament. Only the <strong>place name and country</strong> are sent — never your identity or your own location — and requests are rate-limited per OpenStreetMap's usage policy. If the backend is unavailable, your device's own operating-system geocoder (Apple / Google) is used as a fallback. OpenStreetMap Foundation privacy policy: <a href="https://osmfoundation.org/wiki/Privacy_Policy">osmfoundation.org</a></li>
   </ul>
 
