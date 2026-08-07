@@ -178,6 +178,7 @@
 <nav class="nav" aria-label="Document navigation">
   <a href="index.html">Home</a>
   <a href="terms.html">Terms of Service</a>
+  <a href="delete-account.html">Delete Account</a>
 </nav>
 
 <main>
@@ -327,7 +328,7 @@
     <li><strong>Erasure ("right to be forgotten")</strong> — Article 17.
       <ul>
         <li><strong>On-device data:</strong> uninstall the app and all local data is wiped.</li>
-        <li><strong>Find a Match account and content:</strong> you can delete your account and all posts/comments inside the app (Find a Match → bell icon → "Delete account"), or by writing to <a href="mailto:Juliancilea@gmail.com">Juliancilea@gmail.com</a>. Deletion is final — your Find a Match user record, posts, comments, "I'm in" joins, push subscription, captain claims, fixture messages, reports and blocks are removed from Supabase, as is the corresponding entry in <code>auth.audit_log_entries</code>.</li>
+        <li><strong>Find a Match account and content:</strong> you can delete your account and all posts/comments inside the app (Settings → "PadelRanks account (Apple / Google)" → "Delete PadelRanks account"), or by writing to <a href="mailto:Juliancilea@gmail.com">Juliancilea@gmail.com</a>. Step-by-step instructions are on the <a href="delete-account.html">account deletion page</a>. Deletion is final — your Find a Match user record, posts, comments, "I'm in" joins, push subscription, captain claims, fixture messages, reports and blocks are removed from Supabase, as is the corresponding entry in <code>auth.audit_log_entries</code>.</li>
         <li><strong>Removal of your public player profile:</strong> PadelRanks displays read-only data published by the federations themselves (DPF / Rankedin / FIP). The original records are owned and controlled by the federations; our backend keeps cached copies and snapshots of this public data for performance (§3.2). To have your player profile removed you must request deletion <strong>at the source</strong>: contact Rankedin (<a href="mailto:info@rankedin.no">info@rankedin.no</a>) or your national federation directly. Once the federation deletes your record, PadelRanks stops returning it on the next data refresh, and we will purge the corresponding cached copies and snapshots from our backend on request (write to the address below).</li>
         <li><strong>Anonymous follower records (§1.7):</strong> because the device identifier is not tied to any personal account, the in-app path is to unfollow individual players (each unfollow removes the corresponding row immediately). To delete ALL follow records originating from your device, write to <a href="mailto:Juliancilea@gmail.com">Juliancilea@gmail.com</a> and include your anonymous device id from Settings → Privacy → "Your anonymous device id". We will delete the matching rows from Supabase within 30 days of receipt.</li>
       </ul>

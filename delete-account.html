@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="PadelRanks — how to delete your account and all associated data." />
+<title>PadelRanks — Delete Your Account</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%230A0F0D'/%3E%3Cpath d='M6 8a6 6 0 1 1 12 0c0 3-2 4-2 7H8c0-3-2-4-2-7z' fill='%23C5F947'/%3E%3C/svg%3E" />
+<style>
+  :root {
+    --bg-dark: #0A0F0D;
+    --accent: #C5F947;
+    --accent-soft: #F3FBE7;
+    --accent-border: #C5F947;
+    --text: #111827;
+    --muted: #4B5563;
+    --light: #E5E7EB;
+    --bg: #FFFFFF;
+    --surface: #F9FAFB;
+    --pill-bg: #F3F4F6;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--text);
+    background: var(--bg);
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Dark header ──────────────────────────────────────────── */
+  .hero {
+    background: var(--bg-dark);
+    color: white;
+    padding: 2.5rem 1.5rem 2rem;
+    border-bottom: 3px solid var(--accent);
+  }
+  .hero-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0 0 0.4rem;
+    letter-spacing: -0.02em;
+  }
+  .hero-sub {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.6);
+    margin: 0;
+  }
+
+  /* ── Nav pills ────────────────────────────────────────────── */
+  .nav {
+    max-width: 720px;
+    margin: 1.5rem auto 0;
+    padding: 0 1.5rem;
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+  .nav a {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background: var(--pill-bg);
+    color: var(--text);
+    border: 1px solid var(--light);
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .nav a:hover {
+    background: white;
+    border-color: var(--accent-border);
+  }
+  .nav a.active {
+    background: var(--bg-dark);
+    border-color: var(--bg-dark);
+    color: var(--accent);
+  }
+
+  /* ── Main content ─────────────────────────────────────────── */
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  .meta {
+    background: var(--accent-soft);
+    border-left: 4px solid var(--accent);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    margin: 0 0 2rem;
+    font-size: 0.95rem;
+  }
+  .meta strong { color: var(--text); }
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--text);
+    margin: 2.5rem 0 0.75rem;
+    letter-spacing: -0.01em;
+  }
+  h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 1.5rem 0 0.5rem;
+  }
+  p { margin: 0 0 1rem; }
+  ul { margin: 0 0 1.25rem; padding-left: 1.5rem; }
+  li { margin-bottom: 0.4rem; }
+  a {
+    color: #2C7A2C;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(44,122,44,0.25);
+    transition: border-color 0.15s;
+  }
+  a:hover { border-bottom-color: #2C7A2C; }
+  strong { color: var(--text); font-weight: 600; }
+
+  .countries {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem 1.25rem;
+    background: var(--surface);
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    margin: 0.5rem 0 1.25rem;
+    font-size: 0.95rem;
+  }
+  .no-collect {
+    background: #ECFDF5;
+    border: 1px solid #A7F3D0;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+  .no-collect ul { margin: 0; }
+  .no-collect li::marker { color: #059669; }
+
+  @media (max-width: 560px) {
+    .countries { grid-template-columns: 1fr; }
+    .hero { padding: 2rem 1rem 1.5rem; }
+    h1 { font-size: 1.6rem; }
+    main { padding: 1.5rem 1rem 3rem; }
+    .nav { padding: 0 1rem; }
+  }
+  footer {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem;
+    border-top: 1px solid var(--light);
+    font-size: 0.9rem;
+    color: var(--muted);
+    text-align: center;
+  }
+  footer a { color: var(--muted); border-bottom-color: rgba(75,85,99,0.3); }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <h1>PadelRanks — Delete Your Account</h1>
+    <p class="hero-sub">Effective 7 August 2026</p>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Document navigation">
+  <a href="index.html">Home</a>
+  <a href="privacy-policy.html">Privacy Policy</a>
+  <a href="terms.html">Terms of Service</a>
+</nav>
+
+<main>
+
+  <div class="meta">
+    <div><strong>App:</strong> PadelRanks — <code>com.padelranks.app</code></div>
+    <div><strong>Developer:</strong> PadelRanks — <a href="mailto:Juliancilea@gmail.com">Juliancilea@gmail.com</a></div>
+  </div>
+
+  <h2>1. Delete your account inside the app</h2>
+  <p>This is the fastest route and needs no contact with us. It takes effect immediately.</p>
+  <ol>
+    <li>Open <strong>PadelRanks</strong>.</li>
+    <li>Go to <strong>Settings</strong>.</li>
+    <li>Open the <strong>PadelRanks account (Apple / Google)</strong> section.</li>
+    <li>Tap <strong>Delete PadelRanks account</strong>.</li>
+    <li>Confirm twice. The second confirmation is final.</li>
+  </ol>
+
+  <h2>2. Delete your account by email</h2>
+  <p>If you no longer have the app installed, or you cannot sign in, write to
+  <strong><a href="mailto:Juliancilea@gmail.com">Juliancilea@gmail.com</a></strong> from the address
+  associated with your account and ask for deletion. We complete these requests
+  within <strong>30 days</strong> of receipt, and normally much sooner.</p>
+
+  <h2>3. What is deleted</h2>
+  <p>Deleting your account removes every record tied to your user id:</p>
+  <ul>
+    <li>Your account itself, including the email address supplied by Apple or Google at sign-in</li>
+    <li>Your profile — display name, postal code, city, and any linked Rankedin or FIP player id</li>
+    <li>Find a Match posts, comments and "I'm in" joins</li>
+    <li>Team captain chat: fixture messages, captain claims, contests and confirmations</li>
+    <li>Reports you have filed and people you have blocked</li>
+    <li>Your push notification subscription, so notifications stop</li>
+    <li>The corresponding entry in the authentication audit log</li>
+  </ul>
+  <p>Deletion is permanent. There is no recovery period and no archived copy.</p>
+
+  <h2>4. What is not deleted, and why</h2>
+  <p>Two things survive account deletion, because neither belongs to your account:</p>
+  <ul>
+    <li><strong>Your public player profile.</strong> Rankings, tournament results and player pages come
+    from the national federations and Rankedin, not from PadelRanks — we only display what those
+    services already publish. Deleting your PadelRanks account does not affect them. To have a
+    player record removed you must request it at the source: contact
+    <a href="mailto:info@rankedin.no">info@rankedin.no</a> or your national federation. Once the
+    federation removes it, PadelRanks stops showing it at the next refresh, and we will purge our
+    cached copies on request.</li>
+    <li><strong>Anonymous follow records.</strong> Following a player is tied to an anonymous device
+    identifier, not to your account, so account deletion does not touch it. Unfollowing a player
+    removes its record immediately. To erase every follow record from your device, email us and
+    include the anonymous device id shown under <strong>Settings → Privacy</strong>.</li>
+  </ul>
+
+  <h2>5. Retention</h2>
+  <p>Nothing tied to your account is retained after deletion. Separately from accounts,
+  Find a Match posts expire automatically <strong>7 days</strong> after they are created,
+  whether or not you delete your account.</p>
+
+  <p style="margin-top:2rem">Full detail on what we store and why is in the
+  <a href="privacy-policy.html">Privacy Policy</a>, section 5 (Your rights).</p>
+
+</main>
+
+<footer>
+  © 2026 PadelRanks · <a href="mailto:Juliancilea@gmail.com">Juliancilea@gmail.com</a>
+</footer>
+
+</body>
+</html>
