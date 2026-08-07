@@ -171,7 +171,7 @@
 <header class="hero">
   <div class="hero-inner">
     <h1>PadelRanks — Privacy Policy</h1>
-    <p class="hero-sub">Effective 6 August 2026</p>
+    <p class="hero-sub">Effective 7 August 2026</p>
   </div>
 </header>
 
@@ -201,7 +201,9 @@
   <h2>1. Data we process</h2>
 
   <h3>1.1 Location data</h3>
-  <p>If you grant permission, PadelRanks uses your location <strong>on your device</strong> to calculate the distance between you and padel tournaments and clubs, and to verify that you are physically located in Denmark when you sign in to the Find a Match feature (see §1.5). Your location is never sent to our own servers as a stored record. Outgoing requests to third-party tournament providers (see §3) only include your coordinates when you explicitly run a location-based search — and only as anonymous latitude/longitude, never your identity. If you deny the location permission, the rankings and tournament parts of the app still work — distance simply isn't shown — but the Find a Match feature is unavailable because we cannot confirm you are in Denmark.</p>
+  <p>If you grant permission, PadelRanks uses your location <strong>on your device</strong> to calculate the distance between you and padel tournaments and clubs, and to verify that you are physically located in Denmark when you sign in to the Find a Match feature (see §1.5). Distance calculations, the Denmark check and address lookups all happen on the device; the full-precision fix is not transmitted anywhere.</p>
+  <p><strong>One rounded copy is stored.</strong> If you have a Find a Match account and have switched on tournament-partner or nearby-tournament alerts, your position is <strong>rounded to two decimal places</strong> — roughly a one-kilometre square — and saved against your account in <code>push_subscriptions</code>, so our server can work out whether a tournament someone needs a partner for is near you. Rounding is enforced by the database, not only by the app, so it applies no matter which version you are running. Turning those alerts off, or denying the location permission, means nothing is stored. Deleting your account removes the record (see §5).</p>
+  <p>Outgoing requests to third-party tournament providers (see §3) only include your coordinates when you explicitly run a location-based search — and only as anonymous latitude/longitude, never your identity. If you deny the location permission, the rankings and tournament parts of the app still work — distance simply isn't shown — but the Find a Match feature is unavailable because we cannot confirm you are in Denmark.</p>
 
   <h3>1.2 No federation login</h3>
   <p>The rankings, tournament and club parts of PadelRanks are entirely read-only and require no Rankedin or FIP account. You can browse all 18 countries without signing in to anything. We do not store federation credentials and there is no login form for Rankedin or FIP in the app.</p>
@@ -315,7 +317,7 @@
     <li><strong>Backend cache and snapshots</strong> (public RankedIn / FIP data on our server): short-lived cache entries expire automatically (typically 30 minutes to 24 hours). Each successful fetch is also stored as a historical snapshot of the public source data; these snapshots currently accumulate over time. <strong>Server access logs</strong> (IP address, requested URL, timestamp, user-agent) are kept for operating and debugging the service. No user accounts, Find a Match data or app-user profiles are stored on this backend.</li>
     <li><strong>Find a Match posts and comments</strong>: each post automatically expires <strong>7 days</strong> after it is created and is deleted from the database. Comments and "I'm in" joins on a post are deleted together with the post.</li>
     <li><strong>Team captain chat</strong>: fixture messages, captain claims, contests, confirmations, reports and blocks are retained until you delete your account (see §5), at which point every row tied to your user id is removed. Messages a moderator removes are retained in a hidden state so a later dispute can still be reviewed, and are deleted with the account.</li>
-    <li><strong>Find a Match account record</strong> (display name, postal code, user id, email, push token): retained until you delete your account (see §5).</li>
+    <li><strong>Find a Match account record</strong> (display name, postal code, user id, email, push token, and — if you enabled tournament alerts — your rounded position, see §1.1): retained until you delete your account (see §5).</li>
     <li><strong>Follower-tracking rows</strong> (anonymous device id + player id + timestamp): retained indefinitely so global follower counts remain stable across sessions. You can request deletion of your device's follow records — see §5 (Erasure).</li>
   </ul>
 
